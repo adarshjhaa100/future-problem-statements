@@ -16,7 +16,7 @@ A first-principles-derived collection of 140 validated problem statements (20 pe
 | [`defence-space-advanced-manufacturing.md`](./defence-space-advanced-manufacturing.md) | Problems 1–20: Drones, SDR, C4ISR, CNC, space, wargaming |
 | [`agri-water-urbanisation.md`](./agri-water-urbanisation.md) | Problems 1–20: Soil health, cold chain, wastewater, irrigation, waste mgmt |
 | [`creative-taste-economy.md`](./creative-taste-economy.md) | Problems 1–20: Dubbing, gaming, textile AI, OTT, animation, fashion |
-| [`high-trust-services.md`](./high-trust-services.md) | Problems 1–20: Legal AI, ODR, mental health, OSINT, compliance |
+| [`high-trust-services.md`](./high-trust-services_law_mental_health_osint.md) | Problems 1–20: Legal AI, ODR, mental health, OSINT, compliance |
 
 ---
 
