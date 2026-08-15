@@ -45,7 +45,7 @@ This is a living document. Problems that turned out to be already well-solved we
 
 ### 4. Defence, Space & Advanced Manufacturing
 **File:** [`defence-space-advanced-manufacturing.md`](./defence-space-advanced-manufacturing.md)  
-**Focus:** Drone fail-safes, GNSS jamming detection, swarm protocols, nanosat budget planning, CNC tool-wear sensing, blue-force tracking, OT/ICS cyber range, RPAS training simulators  
+**Focus:** GPS-denied visual-inertial odometry, GNSS jamming/spoofing detection, swarm protocols, cubesat ADCS simulation, machine-tool condition monitoring, CBRN sensors, SDR HF/VHF tactical waveform, anti-drone acoustic detection, wargaming, NavIC stack  
 **Axiom base:** Information dominance, supply-chain security, physics constraints, deterrence economics, dual-use technology  
 **Key stat:** Defence budget FY27: ₹7.84L Cr
 
@@ -57,7 +57,7 @@ This is a living document. Problems that turned out to be already well-solved we
 
 ### 6. Creative & Strategic Taste Economy
 **File:** [`creative-taste-economy.md`](./creative-taste-economy.md)  
-**Focus:** AI dubbing & dubbing QA, Indic-script subtitles, IP valuation, indie game publishing, textile patterns, OTT recommendation, music sync clearance  
+**Focus:** Consent-based Indian voice corpus, IP valuation, indie game publishing, textile patterns, OTT recommendation, mobile-esports tournament integrity, film pre-production, sound libraries  
 **Axiom base:** Attention scarcity, cultural moat, network effects, non-fungible taste, IP as a real asset, local-language advantage  
 **Key stat:** India's media & entertainment sector ~$30B, 500M gamers
 
@@ -107,7 +107,7 @@ Each problem was derived with the same discipline:
 | Estimated buildable in ~3 months | 166 (100%) |
 | Mostly tech-heavy (SW / HW / IoT) | 140 across the original 7 domains |
 | Education & financial (mixed; many non-tech/community) | 26 |
-| Replaced because a solution already existed | 7 (in the current pass; see notes) |
+| Replaced because a solution already existed | 17 (across two passes; see notes) |
 
 ---
 
@@ -134,7 +134,7 @@ Each problem was derived with the same discipline:
 ## What Changed Recently (and why)
 
 - **Domain 8 (Education)** and **Domain 9 (Financial Inclusion)** were added because the original seven domains covered *what India makes* but not *how India thinks and earns*. The education domain deliberately needs almost no technology: most of it is model design, curriculum, and community ritual.
-- **Replacement pass:** a few problem statements described things the market has already got. Those were swapped for sharper gaps:
+- **Replacement pass 1:** a few problem statements described things the market has already got. Those were swapped for sharper gaps:
   - *Grid-tie inverter* → **LPG clean-cooking safety** (inverters are now commodity; LPG accidents kill)
   - *Rooftop solar estimation tool* → **Classroom IAQ ventilation** (Project Sunroof-type tools exist)
   - *P2P carbon marketplace* → **PM-KUSUM agri-pump demand response** (carbon aggregation duplicates #9)
@@ -142,5 +142,17 @@ Each problem was derived with the same discipline:
   - *Crop-disease AI app* → **Counterfeit pesticide verification** (Plantix already has 100M+ answers)
   - *TB adherence tracker* → **Adolescent mental-health screening** (99DOTS/Nikshay already runs nationwide)
   - *The biotech file was also completed from 10 → 20 problems* so every domain has a full set.
-- **Planned next changes** (not yet done): the electronics, defence, and creative files still carry a few entries that overlap existing open-source projects (pick-and-place machines, SDR, CNC controllers, satellite trackers, satellite ground stations, etc.) — flagged in the research, ready to be swapped when you want to pull that trigger.
+- **Replacement pass 2:** the electronics, defence, and creative files carried entries that overlapped existing open-source or commercial solutions. 11 problems were swapped:
+  - *Pick-and-place machine* → **EMI/EMC pre-compliance kit** (LumenPnP/OpenPnP already ship sub-$1K machines)
+  - *RISC-V IDE + debugger toolchain* → **KiCad procurement & DFM plugin** (PlatformIO + OpenOCD + VS Code already support RISC-V)
+  - *Open-hardware RISC-V debug probe* → **Board bring-up copilot** (CMSIS-DAP, WCH-Link, esp-prog exist)
+  - *WebUSB firmware flasher* → **Flying-probe in-circuit tester** (esptool.js / ESP Web Serial tool exist)
+  - *Drone mission computer* → **GPS-denied visual-inertial odometry** (Pixhawk/CubePilot dominate the hardware)
+  - *SDR spectrum monitoring* → **GNSS jamming & spoofing detection** (RTL-SDR + GNU Radio is the commodity baseline)
+  - *Satellite ground station tracker* → **Cubesat ADCS simulator + HIL testbed** (SatNOGS solves the tracker)
+  - *Open-source CNC controller* → **Machine-tool condition monitoring** (GRBL/LinuxCNC exist)
+  - *Encrypted mesh comms device* → **SDR HF/VHF tactical waveform** (Meshtastic already does the LoRa mesh)
+  - *AI dubbing engine* → **Consent-based Indian voice corpus + licensing layer** (Dubverse already ships 60+ language lip-synced dubbing)
+  - *Open-hardware esports controller* → **Mobile-esports tournament integrity analytics** (sub-₹1,500 gamepads exist)
+- Each file now carries a **Replacement Log** table documenting what was swapped and the existing solution found.
 - Note: `instructions.md` is referenced in an old README but was never committed; the reference has been dropped.

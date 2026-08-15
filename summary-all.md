@@ -45,14 +45,14 @@
 |---|---------|------|------------|----------------|--------|
 | 1 | Open-source RISC-V core for Indian IoT | HW+SW | A6 (mask cost) | FPGA soft-core + FreeRTOS | Tech sovereignty |
 | 2 | Formally verified micro-RTOS | SW | A4 + A7 (determinism) | seL4-inspired kernel port | Safety-critical systems |
-| 3 | Open-source pick-and-place PCB machine | HW | A6 (cost barrier) | Stepper + vision pick & place | Hardware prototyping |
+| 3 | EMI/EMC pre-compliance kit (SDR + near-field probes) | HW+SW | A3 (signal integrity) | SDR + probes + sweep/flag software | Export readiness |
 | 4 | Heterogeneous multicore scheduler | SW | A4 + A8 (energy) | Energy-aware task migration | 30-50% better battery life |
 | 5 | TinyML compiler (no TF dependency) | SW | A4 + A8 (memory) | 8-bit quantized C code gen | Edge AI efficiency |
 | 6 | Integrated PMIC + RISC-V for energy harvesting | HW | A8 (energy) + A1 | Custom PMIC + MCU SiP | Battery-free IoT |
 | 7 | Open hardware USB-C PD + CAN analyzer | HW+SW | A3 (signal integrity) | ESP32 + MCP2515 + TCPP | Automotive R&D cost reduction |
 | 8 | Secure FOTA with delta updates for MCU | SW | A5 + A8 (memory) | bsdiff + RSA-2048 + A/B boot | IoT security |
 | 9 | FPGA motor controller for mechatronics | HW+SW | A2 + A7 (determinism) | Lattice FPGA + 3-phase FOC | Robotics, manufacturing |
-| 10 | Open-source RISC-V IDE + debugger | SW | A6 (cost) | VS Code + OpenOCD + CH32V probe | Democratized embedded dev |
+| 10 | KiCad procurement & DFM plugin (Indian distributors) | SW | A6 (cost) + A4 | BOM-to-stock sync + DFM checks | Design-to-manufacturing speed |
 | 11 | Embedded Rust HAL for Indian RISC-V MCUs | SW | A5 + A6 (safety) | Rust HAL + PAC for CH32V/GD32V | Safe embedded systems |
 | 12 | Open-hardware USB oscilloscope (2-channel, 50MS/s) | HW | A5 + A6 (cost) | FPGA + ADC + USB-C interface | Affordable test equipment |
 | 13 | AI test case generator for embedded firmware | SW | A2 + A4 (reliability) | LLM + firmware AST → test vectors | Firmware quality |
@@ -97,15 +97,15 @@
 
 | # | Problem | Type | Core Axiom | 3-Mo Prototype | Impact |
 |---|---------|------|------------|----------------|--------|
-| 1 | Open-source drone mission computer w/ GPS-denied nav | HW+SW | A2 + A4 (physics) | Dual-redundant FC + optical flow | Drone resilience |
-| 2 | Low-cost SDR for spectrum monitoring | HW+SW | A2 + A6 (spectrum) | RTL-SDR + ESP32 + DSP pipeline | Spectrum enforcement |
+| 1 | GPS-denied visual-inertial odometry (VIO) | SW | A2 + A4 (physics) | Camera + IMU fusion on flight computer | Drone resilience |
+| 2 | GNSS jamming/spoofing detection | HW+SW | A2 + A6 (spectrum) | SDR monitor + clock/position anomaly alerts | Navigation integrity |
 | 3 | Swarm protocol for 10+ drones | SW+IOT | A2 + A4 | LoRa mesh + consensus | Defence, disaster response |
-| 4 | Open-source satellite ground station tracker | HW+SW | A6 (orbits) + A7 | 3D-printed mount + TLE tracking | Space access |
+| 4 | Cubesat ADCS simulator + HIL testbed | SW | A4 (physics) + A6 | 6-DOF attitude sim + hardware-in-loop rig | Space capability |
 | 5 | AI predictive maintenance for defence fleets | SW+IOT | A1 + A5 (deterrence) | Vibration sensor + ML | Fleet readiness |
 | 6 | IoT CBRN sensor node for perimeter monitoring | HW+SW | A4 (physics) | Sensor array + LoRa mesh | Soldier safety |
-| 7 | Open-source CNC controller | HW+SW | A3 + A8 (learning curve) | ESP32 + stepper + G-code parser | Manufacturing sovereignty |
+| 7 | Machine-tool condition monitoring | HW+SW | A8 (learning curve) + A2 | Vibration + current sensing + edge ML | MSME uptime |
 | 8 | Solar water-from-air generator (5L/day) | HW | A4 (thermodynamics) | Peltier + solar + condensation | Soldier hydration |
-| 9 | Encrypted mesh comms for disaster response | HW+SW | A2 + A1 (security) | LoRa + ESP32 + AES-256 | Emergency communication |
+| 9 | SDR HF/VHF tactical waveform | SW | A3 (supply chain) + A1 | GNU Radio robust modem + FEC | Comms sovereignty |
 | 10 | Acoustic anti-drone detection array | HW+SW | A4 (physics) | 4-mic array + ML (MFCC) | Security, critical infra |
 | 11 | DIY CNC plasma cutter for small workshops | HW+SW | A5 + A6 (cost) | ESP32 + THC + G-code | Manufacturing access |
 | 12 | IoT-based soldier health monitor (wearable) | HW+SW | A4 + A5 (safety) | HR + SpO2 + temp + LoRa | Soldier safety |
@@ -151,12 +151,12 @@
 
 | # | Problem | Type | Core Axiom | 3-Mo Prototype | Impact |
 |---|---------|------|------------|----------------|--------|
-| 1 | AI dubbing/lip-sync for 22 Indian languages | SW | A8 + A2 (attention) | Wav2Lip + IndicTTS | Cultural access, soft power |
+| 1 | Consent-based Indian voice corpus + licensing | SW | A3 (cultural moat) + A7 | Recording kit + CC licensing + royalties | Data rights, creative income |
 | 2 | IP valuation engine for creative MSME loans | SW | A7 (IP asset) + A5 | Market analytics + ML credit score | Creative entrepreneurship |
 | 3 | Decentalized indie game publishing platform | SW | A4 + A1 (scarcity) | Blockchain + smart contracts | Gaming ecosystem |
 | 4 | Generative AI for traditional textile patterns | SW+IOT | A3 + A7 (IP) | Stable Diffusion + blockchain | Artisan income, IP protection |
 | 5 | Hyper-local OTT content recommendation | SW | A2 + A8 (local) | Indian content graph + ML | Content discovery |
-| 6 | Low-cost Indian mobile esports controller | HW | A4 + A5 (taste) | ESP32 BT gamepad <₹1K | Gaming performance |
+| 6 | Mobile-esports tournament integrity analytics | SW | A2 (attention) + A4 | Stats anomaly detection + verdict flow | Fair competition |
 | 7 | Virtual production LED wall for indie films | HW+SW | A6 + A5 (taste) | Small LED volume + Unreal Engine | Film production efficiency |
 | 8 | AI-assisted Indian sound design library | SW | A3 + A5 (taste) | AI Foley + 10K Indian sounds library | Cultural authenticity |
 | 9 | Web-based film pre-production editor | SW | A6 + A5 (taste) | Collaborative script + storyboard | Film productivity |
@@ -251,7 +251,7 @@ Every problem includes an explicit "Econ" line (within each domain file, not all
 - **Incentive alignment**: Problems framed so that solving them creates net-positive value for adopters
 
 ### Competitive Landscape Validation
-All 140 problems include (in each domain file) a competitive landscape table identifying existing players and the specific gaps that remain unsolved. This ensures each problem is not already solved by commercial or open-source products.
+All 166 problem statements include (in each domain file) a competitive landscape table identifying existing players and the specific gaps that remain unsolved. 17 problems found to be already solved were replaced across two passes — the swap log for the latest pass is at the bottom of the electronics, defence and creative files.
 
 ### Bhagwad Gita Validation
 Each problem in the original seven domains includes one applicable Gita principle (detailed in domain files); the two new domains (Education, Financial Inclusion) carry the same spirit — swavalamban, karma yoga, dharma, nyaya, samata — through their axioms:
