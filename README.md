@@ -1,6 +1,8 @@
-# Problem Statements Repository — 140 Buildable Problems Across 7 Domains
+# Problem Statements Repository — 166 Buildable Problems Across 9 Domains
 
-A first-principles-derived collection of 140 validated problem statements (20 per domain) that an engineer can build a working prototype for in ~3 months. Each problem includes competitive landscape validation, economic quantification, and critical-thinking caveats.
+A hand-built collection of problem statements that an engineer — or in a couple of domains, a community — can take from zero to a working first version in about three months. Each problem carries its competitive-landscape check, an economic or human "why", and honest caveats about what could kill it.
+
+This is a living document. Problems that turned out to be already well-solved were replaced, and new domains were added as the gaps became obvious. The latest additions are in **Domain 8 (Education)** and **Domain 9 (Financial Inclusion)** — see the notes at the bottom.
 
 ---
 
@@ -8,15 +10,16 @@ A first-principles-derived collection of 140 validated problem statements (20 pe
 
 | File | Description |
 |------|-------------|
-| [`instructions.md`](./instructions.md) | Original research brief with methodology (first-principles derivation, axiomatic reduction) |
-| [`summary-all.md`](./summary-all.md) | Consolidated tabular view of all 140 problems with cross-domain validation |
-| [`energy-transition.md`](./energy-transition.md) | Problems 1–20: Solar, grid, EV, carbon markets, energy efficiency |
-| [`electronics-software.md`](./electronics-software.md) | Problems 1–20: RISC-V, embedded systems, TinyML, FOTA, PCB tools |
-| [`biotech-health-longevity.md`](./biotech-health-longevity.md) | Problems 1–20: Diagnostics, genomics, mental health, preventive care |
-| [`defence-space-advanced-manufacturing.md`](./defence-space-advanced-manufacturing.md) | Problems 1–20: Drones, SDR, C4ISR, CNC, space, wargaming |
-| [`agri-water-urbanisation.md`](./agri-water-urbanisation.md) | Problems 1–20: Soil health, cold chain, wastewater, irrigation, waste mgmt |
-| [`creative-taste-economy.md`](./creative-taste-economy.md) | Problems 1–20: Dubbing, gaming, textile AI, OTT, animation, fashion |
-| [`high-trust-services.md`](./high-trust-services_law_mental_health_osint.md) | Problems 1–20: Legal AI, ODR, mental health, OSINT, compliance |
+| [`summary-all.md`](./summary-all.md) | Consolidated tabular view of every problem with cross-domain validation |
+| [`energy-transition.md`](./energy-transition.md) | Problems 1–20: LPG safety, solar, grid, EV, demand response, carbon markets |
+| [`electronics-software.md`](./electronics-software.md) | Problems 1–20: RISC-V, embedded systems, TinyML, FOTA, test & measurement |
+| [`biotech-health-longevity.md`](./biotech-health-longevity.md) | Problems 1–20: Diagnostics, genomics, women's & child health, mental health, preventive care |
+| [`defence-space-advanced-manufacturing.md`](./defence-space-advanced-manufacturing.md) | Problems 1–20: Drones, GNSS resilience, SDR, CNC, wargaming, space |
+| [`agri-water-urbanisation.md`](./agri-water-urbanisation.md) | Problems 1–20: Soil health, onion storage, water, counterfeit inputs, waste mgmt |
+| [`creative-taste-economy.md`](./creative-taste-economy.md) | Problems 1–20: Dubbing & dubbing QA, Indic scripts, film, gaming, sound |
+| [`high-trust-services_law_mental_health_osint.md`](./high-trust-services_law_mental_health_osint.md) | Problems 1–20: Legal AI, ODR, dementia care, rental agreements, OSINT |
+| [`education-community-innovation.md`](./education-community-innovation.md) | **New — Problems 1–14:** the community innovation school (60/40 skills), Indian science + Adhyatmic scaffolding, F1-style competitions, freedom-fighter management & way-of-life course |
+| [`financial-inclusion-informal-economy.md`](./financial-inclusion-informal-economy.md) | **New — Problems 1–12:** credit for the thin-file borrower, micro-pension, micro-insurance, gold-loan transparency, SHG credit, money desk |
 
 ---
 
@@ -24,63 +27,74 @@ A first-principles-derived collection of 140 validated problem statements (20 pe
 
 ### 1. Energy Transition & Climate Resilience
 **File:** [`energy-transition.md`](./energy-transition.md)  
-**Focus:** Solar inverters, grid balancing, EV charging, battery 2nd-life, carbon credits, micro-hydro, green hydrogen, biomass logistics  
-**Axiom base:** Thermodynamics (energy cannot be created/destroyed), real-time grid balance, cost minimization, land constraint  
+**Focus:** LPG clean-cooking safety, solar soiling prediction, P2P trading, EV charging, second-life batteries, micro-hydro, carbon MRV, classroom IAQ, green hydrogen, biomass logistics, agri-pump demand response  
+**Axiom base:** Thermodynamics, real-time grid balance, cost minimization, land constraint, incentive design  
 **Key stat:** India targets 500 GW non-fossil capacity by 2030
 
 ### 2. Electronics & Software
 **File:** [`electronics-software.md`](./electronics-software.md)  
-**Focus:** RISC-V cores, micro-RTOS, pick-and-place machines, TinyML compilers, PMIC design, USB analyzers, FOTA, FPGA motor controllers  
+**Focus:** RISC-V cores, micro-RTOS, EMI pre-compliance, KiCad procurement/DFM, MCU FOTA, board bring-up copilots, test fixtures, PMIC design  
 **Axiom base:** Moore's Law deceleration, physical computation limits, signal integrity, abstraction overhead, mask cost  
 **Key stat:** India imports ~$35B of semiconductors annually
 
 ### 3. Biotech, Health & Longevity
 **File:** [`biotech-health-longevity.md`](./biotech-health-longevity.md)  
-**Focus:** Paper-strip diagnostics, genomic privacy, AI triage, CGM wearables, ADR prediction, infant warmers, lab automation, voice biomarkers  
-**Axiom base:** Biological physical/chemical laws, individual variation, Eroom's Law, early detection value, information asymmetry  
+**Focus:** Paper-strip diagnostics, genomic privacy, mental-health screening, respiratory devices, newborn care (phototherapy, hypothermia), anemia, diabetes self-management  
+**Axiom base:** Physical/chemical laws of biology, individual variation, Eroom's Law, early-detection value, information asymmetry  
 **Key stat:** 100M diabetics, 0.75 psychiatrists per 100K population
 
 ### 4. Defence, Space & Advanced Manufacturing
 **File:** [`defence-space-advanced-manufacturing.md`](./defence-space-advanced-manufacturing.md)  
-**Focus:** Drone mission computers, SDR, swarm protocols, satellite ground stations, predictive maintenance, CBRN sensors, CNC controllers, anti-drone systems  
-**Axiom base:** Information dominance, supply chain security, physics constraints, deterrence economics, dual-use technology  
+**Focus:** Drone fail-safes, GNSS jamming detection, swarm protocols, nanosat budget planning, CNC tool-wear sensing, blue-force tracking, OT/ICS cyber range, RPAS training simulators  
+**Axiom base:** Information dominance, supply-chain security, physics constraints, deterrence economics, dual-use technology  
 **Key stat:** Defence budget FY27: ₹7.84L Cr
 
 ### 5. Agri-Food, Water & Urbanisation
 **File:** [`agri-water-urbanisation.md`](./agri-water-urbanisation.md)  
-**Focus:** Wastewater treatment, stubble burning detection, soil health sensors, solar cold storage, waste segregation, water leak detection, crop disease AI, desalination, smart irrigation, digital twins  
+**Focus:** Onion curing & storage, decentralized wastewater, stubble burning, soil health sensors, water leak detection, counterfeit-input verification, desalination, smart irrigation, digital twins  
 **Axiom base:** Closed-loop cycles, photosynthesis efficiency, circular economy, scale economics, local trust  
 **Key stat:** 72% of urban sewage untreated, 40% food lost post-harvest
 
 ### 6. Creative & Strategic Taste Economy
 **File:** [`creative-taste-economy.md`](./creative-taste-economy.md)  
-**Focus:** AI dubbing (22 languages), IP valuation, indie game publishing, textile pattern AI, OTT recommendation, esports controllers, virtual production, sound design, film pre-production, script analysis  
-**Axiom base:** Attention scarcity, cultural moat, network effects, non-fungible taste, IP as real asset, local language advantage  
+**Focus:** AI dubbing & dubbing QA, Indic-script subtitles, IP valuation, indie game publishing, textile patterns, OTT recommendation, music sync clearance  
+**Axiom base:** Attention scarcity, cultural moat, network effects, non-fungible taste, IP as a real asset, local-language advantage  
 **Key stat:** India's media & entertainment sector ~$30B, 500M gamers
 
 ### 7. High-Trust Services
-**File:** [`high-trust-services.md`](./high-trust-services.md)  
-**Focus:** Legal document simplification, ODR for small claims, mental health triage, OSINT for disinformation, regulatory compliance, tele-psychiatry, contract review, case timeline prediction, legal awareness, blockchain evidence  
+**File:** [`high-trust-services_law_mental_health_osint.md`](./high-trust-services_law_mental_health_osint.md)  
+**Focus:** Legal document simplification, ODR, dementia caregiver support, rental-agreement escrow, OSINT, tele-psychiatry, contract review, prison reform  
 **Axiom base:** Trust as risk-reduction, time value of justice, bounded rationality, information asymmetry, formal rule semantics  
 **Key stat:** 5 Cr+ pending court cases, 150M+ need mental health support
+
+### 8. Education — Community Innovation & the Indian Way of Learning *(New)*
+**File:** [`education-community-innovation.md`](./education-community-innovation.md)  
+**Focus:** The community innovation school (one craft, deep mastery, 60% core + 40% business/research/soft skills), science + Adhyatmic grounding, rapid mentorship, real-world problem statements, F1-style monthly competitions, open-source output, a freedom-fighter way-of-life & management course, and the wider "how India learns" problems  
+**Axiom base:** Learn by doing and teaching, motivation as the binding constraint, mentor time as the scarce resource, skill + character, inherited ways of life, openness compounding, rightly staged competition, trust by small consistent acts  
+**Key insight:** Technology is optional. Many of these problems are runbooks, curricula, and community systems — not devices.
+
+### 9. Financial Inclusion & the Informal Economy *(New)*
+**File:** [`financial-inclusion-informal-economy.md`](./financial-inclusion-informal-economy.md)  
+**Focus:** UPI/GST-based credit scoring for the thin-file borrower, nano-loans with community guarantee, gold-loan transparency, portable micro-pension, benefit navigators, MSPME invoice discounting, micro-insurance, migrant remittance + savings, SHG credit, money clinics, "trace your money"  
+**Axiom base:** Money as medium of trust, data-exhaust as credit signal, small/frequent shapes, honest and fast claims, transparent pricing, frictionless small savings, one-time digitalisation of seams, portable identity  
+**Key stat:** ~8 in 10 workers are informal; informal credit can cost 24–60%+ APR
 
 ---
 
 ## Methodology
 
-Each problem was derived using a **first-principles framework**:
+Each problem was derived with the same discipline:
 
 1. **Research Summary** — key facts, statistics, and constraints per domain
-2. **Axiom List** — fundamental truths that cannot be reduced further (e.g., thermodynamics, physics bounds, economic principles)
-3. **Derivation** — logic chain connecting axioms to problem identification
-4. **Problem Statements** — tabular format with:
-   - Problem name & type (SW+IOT / HW / SW)
-   - Why it remains unsolved/inefficient
-   - Human/Planet impact
-   - 3-month prototype description
-   - First-principles derivation
-   - Validation (stats, economics, Bhagwad Gita principle, critical caveats)
-   - **Competitive landscape** against existing solutions
+2. **Axiom List** — fundamental truths that cannot be reduced further
+3. **Derivation** — the logic chain from axiom to problem
+4. **Problem Statements** — tabular, one line per problem, covering:
+   - Problem + why it is still unsolved
+   - Human or planet impact
+   - The proposed approach
+   - A 3-month first version (pilot, prototype, or runbook)
+   - The first-principles derivation
+   - Validation (including the competitive landscape and honest caveats)
 
 ---
 
@@ -88,29 +102,45 @@ Each problem was derived using a **first-principles framework**:
 
 | Metric | Value |
 |--------|-------|
-| Total Problem Statements | 140 (20 per domain) |
-| SW+IOT Problems | ~80 |
-| Hardware (HW) Problems | ~35 |
-| SW-only Problems | ~25 |
-| Estimated buildable in 3 months | 140 |
-| Domains covered | 7 |
+| Total Problem Statements | 166 |
+| Domains covered | 9 |
+| Estimated buildable in ~3 months | 166 (100%) |
+| Mostly tech-heavy (SW / HW / IoT) | 140 across the original 7 domains |
+| Education & financial (mixed; many non-tech/community) | 26 |
+| Replaced because a solution already existed | 7 (in the current pass; see notes) |
 
 ---
 
 ## How to Use This Repository
 
-1. **Browse domains** via the table above or `summary-all.md` for a quick overview
-2. **Deep dive** into any domain file for full problem details, competitive validation, and first-principles derivation
-3. **Pick a problem** and build the 3-month prototype described
-4. **Contribute back** — add your build notes, expand the competitive landscape, or propose new problems
+1. **Browse domains** via the table above or `summary-all.md`
+2. **Deep dive** into any domain file for the full problem, its competitive check, and its derivation
+3. **Pick a problem** and build the 3-month first version described
+4. **Contribute back** — add build notes, extend the competitive landscape, or propose new problems
 
 ---
 
-## Cross-Cutting Concerns
+## Cross-Cutting Concerns (and the "who pays" test)
 
-1. Regulatory approval timelines (health, defence) often exceed 3-month build cycle
-2. Adoption in rural/trust-based markets requires community engagement beyond prototype
-3. Interoperability standards must be solved for systemic (not point) solutions
-4. Privacy/security must be built in, not bolted on
-5. Talent pipeline for hardware+AI is the binding constraint in India
-6. First-principles solutions must still pass the "who pays" test
+1. Regulatory approval timelines (health, defence, banking) often exceed the 3-month build cycle
+2. Adoption in rural/trust-based markets requires community engagement beyond the prototype
+3. Interoperability standards must be solved for systemic — not point — solutions
+4. Privacy/security must be built in, not bolted on (DPDP Act 2023 is now a fact of life)
+5. Talent pipeline for hardware+AI remains the binding constraint in India
+6. Every problem, no matter how noble, still has to pass the "who pays" test — the answer is written into each validation line
+
+---
+
+## What Changed Recently (and why)
+
+- **Domain 8 (Education)** and **Domain 9 (Financial Inclusion)** were added because the original seven domains covered *what India makes* but not *how India thinks and earns*. The education domain deliberately needs almost no technology: most of it is model design, curriculum, and community ritual.
+- **Replacement pass:** a few problem statements described things the market has already got. Those were swapped for sharper gaps:
+  - *Grid-tie inverter* → **LPG clean-cooking safety** (inverters are now commodity; LPG accidents kill)
+  - *Rooftop solar estimation tool* → **Classroom IAQ ventilation** (Project Sunroof-type tools exist)
+  - *P2P carbon marketplace* → **PM-KUSUM agri-pump demand response** (carbon aggregation duplicates #9)
+  - *Solar cold storage* → **Onion curing & storage controller** (Ecozen/Inficold already ship at scale)
+  - *Crop-disease AI app* → **Counterfeit pesticide verification** (Plantix already has 100M+ answers)
+  - *TB adherence tracker* → **Adolescent mental-health screening** (99DOTS/Nikshay already runs nationwide)
+  - *The biotech file was also completed from 10 → 20 problems* so every domain has a full set.
+- **Planned next changes** (not yet done): the electronics, defence, and creative files still carry a few entries that overlap existing open-source projects (pick-and-place machines, SDR, CNC controllers, satellite trackers, satellite ground stations, etc.) — flagged in the research, ready to be swapped when you want to pull that trigger.
+- Note: `instructions.md` is referenced in an old README but was never committed; the reference has been dropped.

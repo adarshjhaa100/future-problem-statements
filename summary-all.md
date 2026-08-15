@@ -3,12 +3,12 @@
 ## Quick Stats
 | Metric | Value |
 |--------|-------|
-| Total Problem Statements | 140 (20 per domain) |
-| SW+IOT Problems | ~80 |
-| Hardware (HW) Problems | ~35 |
-| SW-only Problems | ~25 |
-| Estimated buildable in 3 months | 140 (100%) |
-| Domains covered | 7 |
+| Total Problem Statements | 166 |
+| Original 7 domains (mostly SW/HW/IoT) | 140 |
+| New: Education (many non-tech/community) | 14 |
+| New: Financial Inclusion (SW/process) | 12 |
+| Estimated buildable in 3 months | 166 (100%) |
+| Domains covered | 9 |
 
 ---
 
@@ -16,7 +16,7 @@
 
 | # | Problem | Type | Core Axiom | 3-Mo Prototype | Impact |
 |---|---------|------|------------|----------------|--------|
-| 1 | Low-cost bidirectional grid-tie inverter for rooftop solar | HW+SW | A4 (real-time balance) + A5 (cost) | ESP32-controlled inverter with net-metering | Energy access, import substitution |
+| 1 | LPG clean-cooking safety + smart cylinder IoT stack | HW+SW | A2 + A8 (incentives) | Leak shutoff + IVR alerts + UPI cylinder rebooking | Life safety, health |
 | 2 | AI-driven predictive maintenance for solar soiling | SW+IOT | A2 (entropy) + A7 (info asymmetry) | IoT sensor + ML cleaning schedule | 15-25% efficiency recovery |
 | 3 | P2P energy trading for residential prosumers | SW+IOT | A4 + A5 + A7 (price discovery) | Blockchain platform + smart meter pilot | 30-50% better tariff |
 | 4 | Low-cost IoT EV charger with load management | HW+SW | A4 + A5 (cost barrier) | ESP32 smart charger <₹25K BOM | EV adoption enabler |
@@ -26,16 +26,16 @@
 | 8 | AI-optimized kinetic micro-hydro for canals | HW | A1 + A6 (land use) | 3D-printed turbine + IoT | 1.2 GW potential |
 | 9 | Digital MRV platform for carbon credits | SW | A7 (asymmetry) + A8 (incentive) | IoT + satellite + ML verification | Climate finance access |
 | 10 | Battery-free IoT for grid asset monitoring | HW+SW | A2 + A5 (cost) | Energy-harvesting wireless sensors | 2% T&D loss reduction |
-| 11 | Open-hardware Li-ion battery recycling test station | HW | A1 + A5 (cost) | ESP32 + sensor array + discharge tester | Battery circular economy |
-| 12 | Community solar microgrid controller with load shedding | HW+SW | A4 + A8 (reliability) | ESP32-based SCADA + relay bank | Rural electrification |
-| 13 | AI-based crop yield forecasting from satellite + weather data | SW | A2 + A7 (asymmetry) | ML on Sentinel-2 + IMD data | Climate-resilient agri |
-| 14 | Smart EV battery swapping station for 2-wheelers | HW+SW | A5 + A8 (urban) | Battery cabinet + IoT auth + payment | EV adoption in cities |
-| 15 | Methane leak detection IoT for landfills | SW+IOT | A1 (GHG) + A8 (cost) | MQ-4 sensor + LoRa + ML baseline | Landfill gas management |
-| 16 | Solar-powered reverse vending machine | HW+SW | A3 + A8 (incentive) | ESP32 + bottle scanner + UPI reward | Plastic waste reduction |
-| 17 | AI building energy audit from phone camera | SW | A2 + A7 (asymmetry) | Thermal camera phone + ML model | Building energy efficiency |
-| 18 | Smart grid islanding detector for solar-rich feeders | HW+SW | A4 + A1 (stability) | Voltage/freq sensor + ESP32 + relay | Grid stability |
-| 19 | Off-grid EV charger for rural areas (solar + battery) | HW | A5 + A8 (access) | Solar panel + battery + controller | Rural EV adoption |
-| 20 | AI plastic waste sorter for MRFs | HW+SW | A3 + A5 (cost) | NIR sensor + conveyor + ML classifier | Recycling efficiency |
+| 11 | Open-source community micro-grid management platform | HW+SW | A4 + A6 (land) | Web + ESP32 SoC/load mgmt | Rural energy access |
+| 12 | AI-based LCA tool for embodied carbon in Indian construction | SW | A1 + A7 | ML on BEE/CII material data | Construction decarbonisation |
+| 13 | Open-source EV fleet route optimizer for last-mile delivery | SW | A4 + A5 | VROOM fork + charge constraints | Logistics utilization |
+| 14 | Classroom IAQ + CO2 ventilation controller for schools | HW+SW | A2 + A4 | ESP32 + SCD40 + fan control | Child health + learning |
+| 15 | Open-hardware BEMS for Indian commercial buildings | HW+SW | A2 + A5 | ESP32 + Modbus + open BEMS | Commercial energy efficiency |
+| 16 | AI energy audit tool for MSMEs (smartphone + clamp meter) | SW | A2 + A7 | App + motor specs + ML advice | SME efficiency |
+| 17 | Green hydrogen production optimizer | SW | A4 + A5 | ML solar/price forecasting | H2 economics |
+| 18 | Biomass supply chain optimizer (power plants + pellet mills) | SW | A3 + A6 | ML + GIS collection routing | Renewable power |
+| 19 | AI solar panel defect detection (drone thermal) | SW+IOT | A2 + A8 | Drone thermal + CNN | O&M cost reduction |
+| 20 | PM-KUSUM agri-solar-pump demand response + remote monitoring | HW+SW | A5 + A8 | ESP32 retrofit + solar-hour scheduler | Farmer income, subsidy cut |
 
 ---
 
@@ -89,7 +89,7 @@
 | 17 | AI pregnancy risk predictor for PHCs | SW | A4 + A6 (maternal) | ML on MCP card + register data | Maternal mortality |
 | 18 | Low-cost CPAP device for sleep apnea | HW | A5 + A4 (cost) | Blower + pressure sensor + MCU | Sleep health |
 | 19 | AI-based anemia detection from conjunctiva photo | SW | A4 + A6 (cost) | Phone camera + ML (Hb prediction) | Anemia screening |
-| 20 | Digital TB treatment adherence tracker (voice + video) | SW | A4 + A8 (adherence) | ASR + video confirmation | TB treatment completion |
+| 20 | Adolescent mental-health screening for schools (privacy-first) | SW | A3 + A6 | PHQ-9/GAD-7 in 8 languages + escalation | Youth mental health |
 
 ---
 
@@ -127,10 +127,10 @@
 | 1 | IoT decentralized wastewater treatment | HW+SW | A1 (closed loop) + A4 | Bioreactor + IoT + solar pump | Water, sanitation |
 | 2 | Stubble burning detection + prevention | SW+IOT | A1 + A3 (resource) | Satellite + ground sensor + ML | Air quality |
 | 3 | Low-cost soil health sensor for FPOs | HW | A6 + A7 (soil health) | ISE sensor + ESP32 + LoRa | Soil health, yield |
-| 4 | Solar cold storage as a service | HW+SW | A8 (waste) + A5 (trust) | DC compressor + PCM + pay-per-use | Food waste reduction |
+| 4 | Onion curing + storage-shed climate controller | HW+SW | A1 + A4 | RH/temp/airflow control + telemetry | Farm income, food prices |
 | 5 | Smart waste segregation bin with rewards | HW+SW | A3 + A8 (incentives) | ESP32 + camera + RFID + UPI | Recycling, waste mgmt |
 | 6 | Acoustic water leak detection system | SW+IOT | A1 + A4 | Piezo sensor + FFT analysis | Water conservation |
-| 7 | AI crop disease advisory (smartphone cam) | SW | A6 + A5 (trust) | CNN leaf diagnosis app | Food security |
+| 7 | Counterfeit pesticide/fertilizer detection via batch-QR | SW | A7 (asymmetry) | Scan-verify-report app + registry | Farmer income, input safety |
 | 8 | Solar desalination still with IoT | HW+SW | A1 + A2 (solar) | Multi-stage still + PCM + IoT | Drinking water access |
 | 9 | Smart irrigation pump retrofit module | HW+SW | A1 + A6 (cost) | ESP32 retrofit on existing pump | Groundwater conservation |
 | 10 | Digital twin for tier-2 city planning | SW | A4 + A7 (asymmetry) | Satellite + utility + census integration | Urban quality of life |
@@ -201,10 +201,48 @@
 
 ---
 
+## Education — Community Innovation & the Indian Way of Learning *(New — 14 problems)*
+
+| # | Problem | Type | Core Axiom | First Version (3 months) | Impact |
+|---|---------|------|------------|--------------------------|--------|
+| 1 | Deep-skill community model (one craft, 60% core + 40% non-tech) | Community | A1 + A2 | 30-learner pilot + published runbook | Deep skill + character |
+| 2 | Rapid mentor engagement + counselling cadence | Process | A3 + A8 | Check-in sprint, dropout tracking | Retention |
+| 3 | Science + Adhyatmic scaffolding of the model | Curriculum | A5 | Philosophy module welded to a STEM track | Balanced learners |
+| 4 | Real-world problem statements as the syllabus | Curriculum | A1 + A4 | 5 local problems shipped to solution | Useful, pressure-tested skill |
+| 5 | F1-style monthly competition circuit | Community | A7 + A1 | 3-race league + sharing write-ups | Momentum, presentation |
+| 6 | Open-source release + a real skill-passport | Community | A6 | 10 releases + 10 passports + employer pilot | Credible CV |
+| 7 | The 40% non-technical track (business/research/soft/ethics) | Curriculum | A4 | One micro-venture or field study per learner | Complete, employable people |
+| 8 | Management & way-of-life via freedom fighters | Curriculum | A5 + A4 | 8–10 lessons + applied project | Principled leaders & citizens |
+| 9 | Learners author bilingual STEM + philosophy content | Curriculum | A1 | 100 vernacular OER items peer-reviewed | Vernacular content abundance |
+| 10 | Self-run local festival of ideas & making | Community | A8 | One town festival run from a kit | Community pride, parent trust |
+| 11 | Deep-attention, digital-free early-years curriculum | Curriculum | A2 | Attention trial in two family groups | Focused foundations |
+| 12 | Village/home apprenticeship (Guru–Shishya loop) | Community | A3 + A5 | 10 learner↔master matches documented | Skill inheritance |
+| 13 | "Publish and defend" assessment instead of marks | Curriculum | A2 | Portfolio cohort vs marked cohort | Honest, growth-oriented assessment |
+| 14 | A guild of mentors (ladder, training, recognition) | Community | A3 + A8 | Mentor ladder + public register | Sustainability of the model |
+
+## Financial Inclusion & the Informal Economy *(New — 12 problems)*
+
+| # | Problem | Type | Core Axiom | First Version (3 months) | Impact |
+|---|---------|------|------------|--------------------------|--------|
+| 1 | UPI/GST thin-file credit scoring, consent-first | SW | A2 + A8 | 500-user scoring pilot with 3 lenders | Fair formal credit |
+| 2 | Nano-loans (₹1–5K) with community guarantee, daily repayment | SW+IOT | A1 + A3 | 200-loan SHG pilot | Escape from the debt trap |
+| 3 | Gold-loan / pawnbroker transparency benchmark | SW | A5 | One-city live benchmark + NBFC pilot | Honest pricing |
+| 4 | Auto-enrol, portable micro-pension for informal & gig workers | SW | A6 + A7 | eShram state + gig-platform integration | Dignified old age |
+| 5 | Welfare-benefit navigator for unorganised workers (eShram-linked) | SW | A7 | One-state eligibility map + 1,000-worker pilot | Entitled benefits received |
+| 6 | MSME nano invoice discounting on GSTN data | SW | A2 + A8 | 50 nano-MSMEs + one anchor buyer | Working capital at fair cost |
+| 7 | Micro-insurance (life + accident + treatment) with honest claims | SW | A4 | 5,000-policy cooperative pilot, claims tracked | Families protected |
+| 8 | Migrant remittance + savings circle (zero-fee, IVR too) | SW | A3 + A6 | 1,000-migrant corridor pilot | Money home + savings habit |
+| 9 | SHG nano-credit with reputation portability | SW | A1 + A8 | 10 SHGs (200 women) pilot | Women's credit, dignity |
+| 10 | "Money clinic" for one-person firms (compliance in plain language) | SW | A5 + A7 | 500 micro-firms via one association | Fearless formalisation |
+| 11 | Village "money desk" — trusted local intermediary | Community | A8 | One-village quarter pilot | Fraud down, grievances heard |
+| 12 | "Trace-your-money" across EPFO/NPS/govt schemes | SW | A6 + A7 | EPFO + NPS lookup pilot cohort | Unclaimed money recovered |
+
+---
+
 ## Cross-Domain Validation Summary
 
 ### Statistics Validation
-All 140 problem statements are backed by verifiable data sources (government statistics, research reports, market analyses) cited in the Research Summary sections of each domain file.
+All 166 problem statements are backed by verifiable data sources (government statistics, research reports, market analyses) cited in the Research Summary sections of each domain file.
 
 ### Economics Validation
 Every problem includes an explicit "Econ" line (within each domain file, not all shown in summary table) showing:
@@ -216,7 +254,7 @@ Every problem includes an explicit "Econ" line (within each domain file, not all
 All 140 problems include (in each domain file) a competitive landscape table identifying existing players and the specific gaps that remain unsolved. This ensures each problem is not already solved by commercial or open-source products.
 
 ### Bhagwad Gita Validation
-Each problem includes one applicable Gita principle (detailed in domain files):
+Each problem in the original seven domains includes one applicable Gita principle (detailed in domain files); the two new domains (Education, Financial Inclusion) carry the same spirit — swavalamban, karma yoga, dharma, nyaya, samata — through their axioms:
 | Principle | Meaning |
 |-----------|---------|
 | Karma Yoga | Action without attachment to fruits |
