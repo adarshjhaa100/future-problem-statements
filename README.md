@@ -154,5 +154,5 @@ Each problem was derived with the same discipline:
   - *Encrypted mesh comms device* → **SDR HF/VHF tactical waveform** (Meshtastic already does the LoRa mesh)
   - *AI dubbing engine* → **Consent-based Indian voice corpus + licensing layer** (Dubverse already ships 60+ language lip-synced dubbing)
   - *Open-hardware esports controller* → **Mobile-esports tournament integrity analytics** (sub-₹1,500 gamepads exist)
-- Each file now carries a **Replacement Log** table documenting what was swapped and the existing solution found.
+- The **Replacement Log** tables (what was swapped and the existing solution found) live in [`docs/replacement-logs.md`](docs/replacement-logs.md).
 - Note: `instructions.md` is referenced in an old README but was never committed; the reference has been dropped.

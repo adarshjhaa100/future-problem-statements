@@ -83,13 +83,4 @@
 
 ---
 
-## Replacement Log (Pass 2)
-
-Problems swapped because a working solution already existed (Pass 1 covered energy / agri / biotech):
-
-| # | Replaced (was) | Existing solution found | Replaced with |
-|---|----------------|------------------------|---------------|
-| 3 | Open-source pick-and-place machine | LumenPnP / OpenPnP (sub-$1K open machines already ship) | EMI/EMC pre-compliance kit |
-| 10 | RISC-V IDE + debugger toolchain | PlatformIO + OpenOCD + VS Code already support RISC-V | KiCad procurement & DFM plugin |
-| 16 | Open-hardware RISC-V debug probe | CMSIS-DAP, WCH-Link, esp-prog (sub-$10 open probes exist) | Board bring-up copilot |
-| 18 | WebUSB firmware flasher | esptool.js / ESP Web Serial tool already exist | Flying-probe in-circuit tester |
+Replacement logs moved to [`docs/replacement-logs.md`](docs/replacement-logs.md).

@@ -87,11 +87,4 @@
 
 ---
 
-## Replacement Log (Pass 2)
-
-Problems swapped because a working solution already existed:
-
-| # | Replaced (was) | Existing solution found | Replaced with |
-|---|----------------|------------------------|---------------|
-| 1 | AI dubbing & lip-sync engine (22 languages) | Dubverse (India) already ships real-time lip-synced dubbing across 60+ languages; Rask and YouTube auto-dub too | Consent-based Indian voice corpus + licensing layer |
-| 6 | Open-hardware mobile esports controller | Redgear, Flydigi and others sell sub-₹1,500 gamepads | Mobile-esports tournament integrity analytics |
+Replacement logs moved to [`docs/replacement-logs.md`](docs/replacement-logs.md).

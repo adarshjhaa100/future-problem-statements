@@ -1,4 +1,4 @@
-# Summary: All 7 Domains — Tabular View
+# Summary: All 9 Domains — Tabular View
 
 ## Quick Stats
 | Metric | Value |
@@ -53,16 +53,16 @@
 | 8 | Secure FOTA with delta updates for MCU | SW | A5 + A8 (memory) | bsdiff + RSA-2048 + A/B boot | IoT security |
 | 9 | FPGA motor controller for mechatronics | HW+SW | A2 + A7 (determinism) | Lattice FPGA + 3-phase FOC | Robotics, manufacturing |
 | 10 | KiCad procurement & DFM plugin (Indian distributors) | SW | A6 (cost) + A4 | BOM-to-stock sync + DFM checks | Design-to-manufacturing speed |
-| 11 | Embedded Rust HAL for Indian RISC-V MCUs | SW | A5 + A6 (safety) | Rust HAL + PAC for CH32V/GD32V | Safe embedded systems |
-| 12 | Open-hardware USB oscilloscope (2-channel, 50MS/s) | HW | A5 + A6 (cost) | FPGA + ADC + USB-C interface | Affordable test equipment |
-| 13 | AI test case generator for embedded firmware | SW | A2 + A4 (reliability) | LLM + firmware AST → test vectors | Firmware quality |
-| 14 | Edge AI object counter for manufacturing lines | HW+SW | A4 + A5 (cost) | ESP32-CAM + tiny YOLO | Smart manufacturing |
-| 15 | Open-source power supply (0-30V, 0-5A, CC/CV) | HW | A5 + A6 (cost) | Buck converter + MCU + LCD | Lab equipment access |
-| 16 | AI code reviewer for Indian dev teams | SW | A5 + A6 (productivity) | LLM + static analysis pipeline | Developer productivity |
-| 17 | LoRa mesh network for IoT sensor data backhaul | HW+SW | A4 + A8 (range) | ESP32 + SX1278 mesh firmware | IoT connectivity |
-| 18 | Open-source BMS simulator for design testing | SW | A2 + A5 (testing) | Python model + GUI | Battery system design |
-| 19 | Hardware-in-the-loop test jig for automotive ECUs | HW+SW | A4 + A7 (testing) | ESP32 + CAN + sensor sim | Automotive testing |
-| 20 | AI-based PCB defect detection (AOI alternative) | HW+SW | A5 + A6 (cost) | Camera + LED ring + ML | PCB manufacturing quality |
+| 11 | Embedded firmware CI/CD pipeline with hardware-in-loop testing | SW | A5 (complexity) + A4 | GitLab CI + ESP32 test fixture + auto flash-report | IoT reliability |
+| 12 | Open-source USB protocol analyzer (USB 2.0 + USB-C PD decoding) | HW+SW | A3 (signal integrity) | FPGA + USB PHY + decoder stack | Debugging access |
+| 13 | Rust embedded HAL for Indian RISC-V chips (generic, no_std) | SW | A5 (memory safety) + A6 | Rust HAL + PAC for CH32V/GD32V | Safe embedded systems |
+| 14 | Formal verification linter for embedded C firmware (Z3-based) | SW | A6 (formal rules) + A5 | Z3 SMT + Clang static analyzer | Safety-critical systems |
+| 15 | Edge AI data pipeline for Indian languages (audio → intent on MCU) | SW | A8 (memory/latency) + A2 | ESP32-S3 on-device keyword→ASR→NLP | Voice-enabled IoT |
+| 16 | Board bring-up copilot (AI-assisted debug) | SW | A4 (abstraction) + A7 | Guided bring-up checklist + fault suggestion | Debug speed |
+| 17 | AI-assisted PCB schematic routing (KiCad + ML) | SW | A4 (productivity) + A6 | KiCad plugin + ML trace routing | PCB design speed |
+| 18 | Flying-probe in-circuit tester | HW+SW | A2 (physical) + A6 | Stepper probe head + netlist continuity/isolation test | Manufacturing quality |
+| 19 | Embedded SBOM generator for IoT compliance (CERT-In) | SW | A5 + A6 | SPDX/CycloneDX parser for ESP-IDF/Arduino/Zephyr | IoT security compliance |
+| 20 | RTOS-aware tracing & profiling for FreeRTOS/Zephyr | SW | A7 (determinism) + A5 | Trace recorder + visual task-switch timeline | RTOS debugging |
 
 ---
 
@@ -107,16 +107,16 @@
 | 8 | Solar water-from-air generator (5L/day) | HW | A4 (thermodynamics) | Peltier + solar + condensation | Soldier hydration |
 | 9 | SDR HF/VHF tactical waveform | SW | A3 (supply chain) + A1 | GNU Radio robust modem + FEC | Comms sovereignty |
 | 10 | Acoustic anti-drone detection array | HW+SW | A4 (physics) | 4-mic array + ML (MFCC) | Security, critical infra |
-| 11 | DIY CNC plasma cutter for small workshops | HW+SW | A5 + A6 (cost) | ESP32 + THC + G-code | Manufacturing access |
-| 12 | IoT-based soldier health monitor (wearable) | HW+SW | A4 + A5 (safety) | HR + SpO2 + temp + LoRa | Soldier safety |
-| 13 | SAR drone autopilot with target tracking | SW | A2 + A4 (mission) | Optical flow + YOLO + waypoint | Search and rescue |
-| 14 | 3D-printed rocket nozzle for student rocketry | HW | A3 + A6 (learning) | FDM ceramic-coated nozzle | Space education |
-| 15 | AI-based satellite imagery analysis for defence | SW | A2 + A7 (intel) | YOLO + satellite image pipeline | Intelligence |
-| 16 | Open-source cyber range for Indian infosec training | SW | A5 + A6 (training) | Docker-based attack/defend scenarios | Cybersecurity skills |
-| 17 | Vehicle tracker for military logistics | HW+SW | A4 + A8 (logistics) | GPS + ESP32 + LoRa + dashboard | Logistics efficiency |
-| 18 | Portable digital microscope for field inspection | HW | A5 + A6 (cost) | USB camera + LED + focus mechanism | Field quality control |
-| 19 | AI-based threat detection from CCTV feeds | SW | A2 + A4 (security) | YOLO + multiple camera streams | Perimeter security |
-| 20 | Open-hardware flight controller for student drones | HW+SW | A5 + A6 (learning) | STM32 + IMU + barometer + GPS | Drone education |
+| 11 | Open-source wargaming simulation for tri-service exercises | SW | A2 + A7 (dual-use) | Multi-player sim with Indian terrain + red/blue teaming | Defence readiness |
+| 12 | Linux RTOS distribution hardened for defence systems (Yocto) | SW | A3 (supply chain) + A5 | Yocto RT Linux + SELinux + MILS kernel | Tech sovereignty |
+| 13 | Manpack mobile ad-hoc network (MANET) node | HW+SW | A2 + A3 | ESP32-S3 + LoRa/4G + OLSRv2 mesh + GPS | Tactical comms |
+| 14 | AI sonar signal classification for anti-submarine warfare | SW | A2 + A7 | CNN on spectrograms (public signatures) | Naval effectiveness |
+| 15 | Weapon system lifecycle tracking (IoT + digital twin for ammo) | HW+SW | A1 + A2 | BLE beacon + temp/humidity IoT + FEFO alerts | Defence readiness, waste cut |
+| 16 | Thermal camouflage pattern generator for Indian terrain | SW | A4 + A2 | GAN on satellite + vegetation data | Soldier survivability |
+| 17 | DP&P 2026 compliance automation tool for procurement | SW | A4 + A6 (formal rules) | Clause tagging → RFP → bid evaluation → audit | Procurement speed |
+| 18 | Battlefield medical triage assistant (offline AI) | SW | A4 (time) + A5 | Offline triage app + GPS-tagged evacuation | Soldier survival |
+| 19 | NavIC receiver software stack (open-source) | SW | A3 + A6 (space) | C library for NavIC L5/S decoding + anti-spoof | Navigation sovereignty |
+| 20 | Defence estate & infrastructure GIS management platform | SW | A6 (space) + A4 | QGIS + satellite change detection + lease tracking | Asset protection |
 
 ---
 
@@ -134,16 +134,16 @@
 | 8 | Solar desalination still with IoT | HW+SW | A1 + A2 (solar) | Multi-stage still + PCM + IoT | Drinking water access |
 | 9 | Smart irrigation pump retrofit module | HW+SW | A1 + A6 (cost) | ESP32 retrofit on existing pump | Groundwater conservation |
 | 10 | Digital twin for tier-2 city planning | SW | A4 + A7 (asymmetry) | Satellite + utility + census integration | Urban quality of life |
-| 11 | IoT-based fish pond monitoring (DO, pH, temp, turbidity) | HW+SW | A4 + A6 (aquaculture) | Sensor array + ESP32 + LoRa | Aquaculture yield |
-| 12 | Smart paddy field water level controller | HW | A1 + A6 (water) | Ultrasonic + ESP32 + motor relay | Water conservation |
-| 13 | AI milk adulteration detector (near infrared) | HW+SW | A4 + A6 (safety) | NIR LED + photodiode + ML | Food safety |
-| 14 | Solar-powered auto-rickshaw for urban waste collection | HW | A5 + A8 (urban) | E-rickshaw + bins + GPS tracking | Urban waste mgmt |
-| 15 | AI-based crop price prediction for farmers | SW | A2 + A7 (price) | ML on mandi price data | Farmer income |
-| 16 | IoT-based flood early warning for urban areas | HW+SW | A4 + A8 (safety) | Water level + rain sensor + LoRa alerts | Flood safety |
-| 17 | Smart poultry farm monitor (temp, humidity, NH3, light) | HW+SW | A4 + A6 (poultry) | Sensor array + ESP32 + actuator | Poultry productivity |
-| 18 | AI weed detection + precision spraying for tractors | HW+SW | A5 + A6 (cost) | Camera + ML + ESP32 + solenoid valve | Herbicide reduction |
-| 19 | Open-hardware weather station for FPOs | HW | A5 + A6 (cost) | Sensors + ESP32 + solar + LoRa | Localized weather data |
-| 20 | Smart parking system for tier-2 cities | SW+IOT | A4 + A8 (urban) | Magnetic sensor + ESP32 + app | Urban parking |
+| 11 | AI crop insurance claim verification (satellite imagery) | SW | A7 (asymmetry) + A5 | NDVI time-series + ML → auto claim + UPI | Farmer financial security |
+| 12 | IoT inland fisheries & aquaculture monitoring | HW+SW | A1 (closed loop) + A6 | DO/pH/temp sensors + LoRa + aeration control | Food security, farmer income |
+| 13 | Remote monitoring & efficiency for biogas plants | HW+SW | A1 + A2 (efficiency) | Temp/pressure/pH/gas IoT + ML digester health | Renewable energy, waste mgmt |
+| 14 | AI site-specific fertilizer recommendation engine | SW | A7 + A1 | Soil + crop + weather + satellite → NPK advice | Ag efficiency, pollution cut |
+| 15 | Real-time groundwater aquifer mapping & depletion alerts | HW+SW | A1 (water cycle) + A4 | IoT water level + rain gauge + ML interpolation | Water security |
+| 16 | Blockchain organic certification traceability | SW | A1 (trust) + A7 | Hyperledger + QR for consumer + audit trail | Organic integrity |
+| 17 | AI forest fire early detection & alert system | SW | A1 (carbon) + A4 | Sentinel-2 + thermal + ML fire-risk map | Forest protection, carbon |
+| 18 | ML crop price forecasting for APMC mandis (7-day ahead) | SW | A5 (incentives) + A7 | ML on 25-yr APMC + weather + sowing data | Farmer income stability |
+| 19 | IoT food grain storage monitoring for FCI godowns | HW+SW | A8 (waste) + A2 | Temp/humidity/CO2 sensors + aeration alerts | Food security |
+| 20 | AI land record digitization & dispute resolution | SW | A7 + A4 | NLP on legacy records → structured DB + patterns | Property rights |
 
 ---
 
@@ -251,7 +251,7 @@ Every problem includes an explicit "Econ" line (within each domain file, not all
 - **Incentive alignment**: Problems framed so that solving them creates net-positive value for adopters
 
 ### Competitive Landscape Validation
-All 166 problem statements include (in each domain file) a competitive landscape table identifying existing players and the specific gaps that remain unsolved. 17 problems found to be already solved were replaced across two passes — the swap log for the latest pass is at the bottom of the electronics, defence and creative files.
+All 166 problem statements include (in each domain file) a competitive landscape table identifying existing players and the specific gaps that remain unsolved. 17 problems found to be already solved were replaced across two passes — the swap log is in [`docs/replacement-logs.md`](docs/replacement-logs.md).
 
 ### Bhagwad Gita Validation
 Each problem in the original seven domains includes one applicable Gita principle (detailed in domain files); the two new domains (Education, Financial Inclusion) carry the same spirit — swavalamban, karma yoga, dharma, nyaya, samata — through their axioms:

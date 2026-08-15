@@ -85,14 +85,4 @@
 
 ---
 
-## Replacement Log (Pass 2)
-
-Problems swapped because a working solution already existed:
-
-| # | Replaced (was) | Existing solution found | Replaced with |
-|---|----------------|------------------------|---------------|
-| 1 | Open-source drone mission computer | Pixhawk / CubePilot already dominate; kept the real gap | GPS-denied visual-inertial odometry (reframed) |
-| 2 | Low-cost SDR spectrum monitoring | RTL-SDR + GNU Radio is exactly this; the hardware is commodity | GNSS jamming & spoofing detection (reframed) |
-| 4 | Satellite ground station tracker | SatNOGS fully solves this (open 3D-printed trackers + network) | Cubesat ADCS simulator + HIL testbed |
-| 7 | Open-source CNC controller | GRBL / LinuxCNC / OpenBuilds controllers exist | Machine-tool condition monitoring |
-| 9 | Encrypted mesh comms device | Meshtastic (LoRa + AES-256 + GPS + maps, open-source) | Software-defined HF/VHF tactical waveform |
+Replacement logs moved to [`docs/replacement-logs.md`](docs/replacement-logs.md).
