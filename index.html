@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Problem Statements</title>
+    <!-- Markdown Parser -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        :root {
+            --bg: #f4f5f7; --surface: #ffffff; --text: #172b4d;
+            --primary: #0052cc; --border: #dfe1e6;
+        }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; background: var(--bg); color: var(--text); display: flex; height: 100vh; }
+
+        /* Navigation */
+        nav { width: 250px; background: var(--surface); border-right: 1px solid var(--border); padding: 20px; box-shadow: 2px 0 5px rgba(0,0,0,0.05); }
+        nav h2 { margin-top: 0; font-size: 1.2rem; color: var(--primary); }
+        nav a { display: block; padding: 10px; text-decoration: none; color: var(--text); border-radius: 4px; margin-bottom: 5px; cursor: pointer; }
+        nav a:hover, nav a.active { background: #ebecf0; font-weight: bold; }
+
+        /* Main Content */
+        main { flex: 1; padding: 30px; overflow-y: auto; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 2px solid var(--border); padding-bottom: 10px; }
+
+        /* Cards & Lists */
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+        .card { background: var(--surface); padding: 20px; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(0,0,0,0.1); transition: transform 0.2s; }
+        .card:hover { transform: translateY(-2px); box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .card h3 { margin-top: 0; color: var(--primary); }
+        .domain-tag { font-size: 0.8rem; background: #eae6ff; color: #403294; padding: 2px 8px; border-radius: 12px; display: inline-block; margin-bottom: 10px; }
+
+        /* Detail View */
+        .detail-container { max-width: 800px; margin: 0 auto; background: var(--surface); padding: 40px; border-radius: 8px; border: 1px solid var(--border); }
+        .notes-area { width: 100%; min-height: 150px; margin-top: 20px; padding: 15px; border: 1px solid var(--border); border-radius: 4px; font-family: inherit; font-size: 1rem; resize: vertical; }
+        .btn { padding: 10px 20px; background: var(--primary); color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; }
+        .btn:hover { background: #0747a6; }
+        .btn-danger { background: #de350b; }
+        .btn-outline { background: transparent; color: var(--primary); border: 1px solid var(--primary); }
+
+        /* Utility */
+        .hidden { display: none !important; }
+        .loader { text-align: center; padding: 50px; font-size: 1.2rem; color: #6b778c; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <h2>Problem Hub</h2>
+        <a href="#" id="nav-dashboard" class="active">📋 My Selections</a>
+        <a href="#explore" id="nav-explore">🔍 Explore Domains</a>
+        <hr>
+        <small style="color: #6b778c;">Source: GitHub Repo</small>
+    </nav>
+
+    <main id="app-view">
+        <!-- Content injected here via JS -->
+        <div class="loader">Loading repository structure...</div>
+    </main>
+
+    <script>
+        // ==========================================
+        // CONFIGURATION & STATE
+        // ==========================================
+        const CONFIG = {
+            owner: 'adarshjhaa100',
+            repo: 'future-problem-statements',
+            branch: 'main', // Change to 'master' if your default branch is master
+            targetDir: 'problems/' // The folder where your markdown files live
+        };
+
+        const STATE = {
+            tree: [],
+            selected: JSON.parse(localStorage.getItem('selected_problems')) || []
+        };
+
+        // ==========================================
+        // CORE ENGINE (First Principles Logic)
+        // ==========================================
+
+        // 1. Fetch Repository Tree (1 API Call)
+        async function fetchRepoTree() {
+            const url = `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/git/trees/${CONFIG.branch}?recursive=1`;
+            const response = await fetch(url);
+            if (!response.ok) throw new Error("Failed to fetch repo tree. Check repo name/branch.");
+            const data = await response.json();
+            // Filter only markdown files inside the target directory
+            return data.tree.filter(item => item.path.startsWith(CONFIG.targetDir) && item.path.endsWith('.md'));
+        }
+
+        // 2. Fetch Raw Markdown Content (CDN, no strict API limits)
+        async function fetchMarkdown(path) {
+            const url = `https://raw.githubusercontent.com/${CONFIG.owner}/${CONFIG.repo}/${CONFIG.branch}/${path}`;
+            const response = await fetch(url);
+            return await response.text();
+        }
+
+        // 3. LocalStorage Management
+        function saveState() {
+            localStorage.setItem('selected_problems', JSON.stringify(STATE.selected));
+        }
+
+        function toggleSelection(path, title, domain) {
+            const index = STATE.selected.findIndex(p => p.path === path);
+            if (index > -1) {
+                STATE.selected.splice(index, 1);
+            } else {
+                STATE.selected.push({ path, title, domain, notes: '' });
+            }
+            saveState();
+            renderCurrentView(); // Re-render to update UI state (e.g., button text)
+        }
+
+        function updateNotes(path, notes) {
+            const item = STATE.selected.find(p => p.path === path);
+            if (item) {
+                item.notes = notes;
+                saveState();
+            }
+        }
+
+        // ==========================================
+        // UI RENDERING & ROUTING
+        // ==========================================
+
+        function getMetaData(path) {
+            // Extracts Domain and Title from path: "problems/AI/Neural-Nets.md" -> Domain: "AI", Title: "Neural Nets"
+            const parts = path.replace(CONFIG.targetDir, '').split('/');
+            const domain = parts.length > 1 ? parts[0] : 'General';
+            const title = parts[parts.length - 1].replace('.md', '').replace(/-/g, ' ');
+            return { domain, title };
+        }
+
+        function renderDashboard() {
+            const app = document.getElementById('app-view');
+            document.getElementById('nav-dashboard').classList.add('active');
+            document.getElementById('nav-explore').classList.remove('active');
+
+            if (STATE.selected.length === 0) {
+                app.innerHTML = `
+                    <div class="header"><h1>My Selections</h1></div>
+                    <p>You haven't selected any problem statements yet. Go to <a href="#explore">Explore</a> to find some.</p>
+                `;
+                return;
+            }
+
+            let html = `<div class="header"><h1>My Selections</h1> <button class="btn btn-danger" onclick="clearAll()">Clear All</button></div><div class="grid">`;
+
+            STATE.selected.forEach(item => {
+                html += `
+                    <div class="card">
+                        <span class="domain-tag">${item.domain}</span>
+                        <h3>${item.title}</h3>
+                        <p><strong>Notes:</strong> ${item.notes || '<i>No notes added.</i>'}</p>
+                        <div style="margin-top:15px; display:flex; gap:10px;">
+                            <button class="btn btn-outline" onclick="navigate('problem/${item.path}')">View / Edit</button>
+                            <button class="btn btn-danger" onclick="toggleSelection('${item.path}'); renderCurrentView();">Remove</button>
+                        </div>
+                    </div>
+                `;
+            });
+            html += `</div>`;
+            app.innerHTML = html;
+        }
+
+        function renderExplorer() {
+            const app = document.getElementById('app-view');
+            document.getElementById('nav-explore').classList.add('active');
+            document.getElementById('nav-dashboard').classList.remove('active');
+
+            // Group by domain
+            const domains = {};
+            STATE.tree.forEach(file => {
+                const { domain, title } = getMetaData(file.path);
+                if (!domains[domain]) domains[domain] = [];
+                domains[domain].push({ path: file.path, title });
+            });
+
+            let html = `<div class="header"><h1>Explore Domains</h1></div>`;
+            for (const [domain, problems] of Object.entries(domains)) {
+                html += `<h2 style="margin-bottom:10px;">${domain}</h2><div class="grid" style="margin-bottom:30px;">`;
+                problems.forEach(p => {
+                    const isSelected = STATE.selected.some(s => s.path === p.path);
+                    html += `
+                        <div class="card">
+                            <h3>${p.title}</h3>
+                            <button class="btn ${isSelected ? 'btn-danger' : ''}" style="width:100%" onclick="navigate('problem/${p.path}')">
+                                ${isSelected ? 'Selected (View/Edit)' : 'View & Select'}
+                            </button>
+                        </div>
+                    `;
+                });
+                html += `</div>`;
+            }
+            app.innerHTML = html;
+        }
+
+        async function renderProblem(path) {
+            const app = document.getElementById('app-view');
+            app.innerHTML = `<div class="loader">Loading problem statement...</div>`;
+
+            try {
+                const mdContent = await fetchMarkdown(path);
+                const htmlContent = marked.parse(mdContent);
+                const { domain, title } = getMetaData(path);
+                const isSelected = STATE.selected.some(s => s.path === path);
+                const existingItem = STATE.selected.find(s => s.path === path);
+
+                app.innerHTML = `
+                    <div style="margin-bottom:20px;">
+                        <a href="#explore" style="text-decoration:none; color:var(--primary);">← Back to Explorer</a>
+                    </div>
+                    <div class="detail-container">
+                        <span class="domain-tag">${domain}</span>
+                        <h1>${title}</h1>
+                        <hr>
+                        <div id="md-content">${htmlContent}</div>
+
+                        <div style="margin-top: 40px; border-top: 2px solid var(--border); padding-top: 20px;">
+                            <h3>My Notes & Selection</h3>
+                            <textarea id="user-notes" class="notes-area" placeholder="Add your thoughts, solutions, or notes here...">${existingItem ? existingItem.notes : ''}</textarea>
+
+                            <div style="margin-top:15px; display: flex; gap:10px;">
+                                <button class="btn ${isSelected ? 'btn-danger' : ''}" id="select-btn">
+                                    ${isSelected ? 'Remove from Selections' : 'Add to My Selections'}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                // Event Listeners for the Detail View
+                document.getElementById('user-notes').addEventListener('input', (e) => {
+                    if (isSelected) updateNotes(path, e.target.value);
+                });
+
+                document.getElementById('select-btn').addEventListener('click', () => {
+                    // If adding for the first time, save the current notes
+                    if (!isSelected) {
+                        const currentNotes = document.getElementById('user-notes').value;
+                        const index = STATE.selected.findIndex(p => p.path === path);
+                        if (index === -1) {
+                             STATE.selected.push({ path, title, domain, notes: currentNotes });
+                             saveState();
+                        }
+                    } else {
+                        toggleSelection(path);
+                    }
+                    renderProblem(path); // Re-render to update button state
+                });
+
+            } catch (error) {
+                app.innerHTML = `<h2>Error loading file</h2><p>${error.message}</p>`;
+            }
+        }
+
+        // ==========================================
+        // ROUTER & INITIALIZATION
+        // ==========================================
+
+        function navigate(hash) {
+            window.location.hash = hash;
+        }
+
+        function clearAll() {
+            if(confirm("Are you sure you want to clear all selections and notes?")) {
+                STATE.selected = [];
+                saveState();
+                renderCurrentView();
+            }
+        }
+
+        function renderCurrentView() {
+            const hash = window.location.hash.slice(1); // remove '#'
+
+            if (hash.startsWith('problem/')) {
+                const path = hash.replace('problem/', '');
+                renderProblem(path);
+            } else if (hash === 'explore') {
+                renderExplorer();
+            } else {
+                renderDashboard();
+            }
+        }
+
+        // Boot up
+        window.addEventListener('hashchange', renderCurrentView);
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                STATE.tree = await fetchRepoTree();
+                renderCurrentView();
+            } catch (e) {
+                document.getElementById('app-view').innerHTML = `<h2>Initialization Error</h2><p>${e.message}</p>`;
+            }
+        });
+    </script>
+</body>
+</html>
