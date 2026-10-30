@@ -1,158 +1,249 @@
-# Problem Statements Repository — 166 Buildable Problems Across 9 Domains
+# Future Problem Statements — 144 Problems Across 12 Domains (October 2026 Edition)
 
-A hand-built collection of problem statements that an engineer — or in a couple of domains, a community — can take from zero to a working first version in about three months. Each problem carries its competitive-landscape check, an economic or human "why", and honest caveats about what could kill it.
+A rebuilt, first-principles collection of problems that a **1–3 person team** can take from zero to a legible first version in **under 12 months**, with a realistic pilot budget, a named payer, a competitive check, a kill criterion and a behavioural-science go-to-market plan.
 
-This is a living document. Problems that turned out to be already well-solved were replaced, and new domains were added as the gaps became obvious. The latest additions are in **Domain 8 (Education)** and **Domain 9 (Financial Inclusion)** — see the notes at the bottom.
+This is not a startup idea list. Some problems are best run by a cooperative, a municipality, a hospital, a newsroom, a standards body or a community group. Software and AI are tools in some rows; in many rows the missing piece is a contract, a maintenance protocol, a measurement, a trusted messenger or a piece of financing.
 
----
-
-## Repository Structure
-
-| File | Description |
-|------|-------------|
-| [`summary-all.md`](./summary-all.md) | Consolidated tabular view of every problem with cross-domain validation |
-| [`energy-transition.md`](./energy-transition.md) | Problems 1–20: LPG safety, solar, grid, EV, demand response, carbon markets |
-| [`electronics-software.md`](./electronics-software.md) | Problems 1–20: RISC-V, embedded systems, TinyML, FOTA, test & measurement |
-| [`biotech-health-longevity.md`](./biotech-health-longevity.md) | Problems 1–20: Diagnostics, genomics, women's & child health, mental health, preventive care |
-| [`defence-space-advanced-manufacturing.md`](./defence-space-advanced-manufacturing.md) | Problems 1–20: Drones, GNSS resilience, SDR, CNC, wargaming, space |
-| [`agri-water-urbanisation.md`](./agri-water-urbanisation.md) | Problems 1–20: Soil health, onion storage, water, counterfeit inputs, waste mgmt |
-| [`creative-taste-economy.md`](./creative-taste-economy.md) | Problems 1–20: Dubbing & dubbing QA, Indic scripts, film, gaming, sound |
-| [`high-trust-services_law_mental_health_osint.md`](./high-trust-services_law_mental_health_osint.md) | Problems 1–20: Legal AI, ODR, dementia care, rental agreements, OSINT |
-| [`education-community-innovation.md`](./education-community-innovation.md) | **New — Problems 1–14:** the community innovation school (60/40 skills), Indian science + Adhyatmic scaffolding, F1-style competitions, freedom-fighter management & way-of-life course |
-| [`financial-inclusion-informal-economy.md`](./financial-inclusion-informal-economy.md) | **New — Problems 1–12:** credit for the thin-file borrower, micro-pension, micro-insurance, gold-loan transparency, SHG credit, money desk |
+The previous 166-problem edition is preserved in [`archive/2025-v1/`](./archive/2025-v1/). This edition is a from-scratch rebuild, not a patch.
 
 ---
 
-## Domain Overview
+## What is different in this edition
 
-### 1. Energy Transition & Climate Resilience
-**File:** [`energy-transition.md`](./energy-transition.md)  
-**Focus:** LPG clean-cooking safety, solar soiling prediction, P2P trading, EV charging, second-life batteries, micro-hydro, carbon MRV, classroom IAQ, green hydrogen, biomass logistics, agri-pump demand response  
-**Axiom base:** Thermodynamics, real-time grid balance, cost minimization, land constraint, incentive design  
-**Key stat:** India targets 500 GW non-fossil capacity by 2030
-
-### 2. Electronics & Software
-**File:** [`electronics-software.md`](./electronics-software.md)  
-**Focus:** RISC-V cores, micro-RTOS, EMI pre-compliance, KiCad procurement/DFM, MCU FOTA, board bring-up copilots, test fixtures, PMIC design  
-**Axiom base:** Moore's Law deceleration, physical computation limits, signal integrity, abstraction overhead, mask cost  
-**Key stat:** India imports ~$35B of semiconductors annually
-
-### 3. Biotech, Health & Longevity
-**File:** [`biotech-health-longevity.md`](./biotech-health-longevity.md)  
-**Focus:** Paper-strip diagnostics, genomic privacy, mental-health screening, respiratory devices, newborn care (phototherapy, hypothermia), anemia, diabetes self-management  
-**Axiom base:** Physical/chemical laws of biology, individual variation, Eroom's Law, early-detection value, information asymmetry  
-**Key stat:** 100M diabetics, 0.75 psychiatrists per 100K population
-
-### 4. Defence, Space & Advanced Manufacturing
-**File:** [`defence-space-advanced-manufacturing.md`](./defence-space-advanced-manufacturing.md)  
-**Focus:** GPS-denied visual-inertial odometry, GNSS jamming/spoofing detection, swarm protocols, cubesat ADCS simulation, machine-tool condition monitoring, CBRN sensors, SDR HF/VHF tactical waveform, anti-drone acoustic detection, wargaming, NavIC stack  
-**Axiom base:** Information dominance, supply-chain security, physics constraints, deterrence economics, dual-use technology  
-**Key stat:** Defence budget FY27: ₹7.84L Cr
-
-### 5. Agri-Food, Water & Urbanisation
-**File:** [`agri-water-urbanisation.md`](./agri-water-urbanisation.md)  
-**Focus:** Onion curing & storage, decentralized wastewater, stubble burning, soil health sensors, water leak detection, counterfeit-input verification, desalination, smart irrigation, digital twins  
-**Axiom base:** Closed-loop cycles, photosynthesis efficiency, circular economy, scale economics, local trust  
-**Key stat:** 72% of urban sewage untreated, 40% food lost post-harvest
-
-### 6. Creative & Strategic Taste Economy
-**File:** [`creative-taste-economy.md`](./creative-taste-economy.md)  
-**Focus:** Consent-based Indian voice corpus, IP valuation, indie game publishing, textile patterns, OTT recommendation, mobile-esports tournament integrity, film pre-production, sound libraries  
-**Axiom base:** Attention scarcity, cultural moat, network effects, non-fungible taste, IP as a real asset, local-language advantage  
-**Key stat:** India's media & entertainment sector ~$30B, 500M gamers
-
-### 7. High-Trust Services
-**File:** [`high-trust-services_law_mental_health_osint.md`](./high-trust-services_law_mental_health_osint.md)  
-**Focus:** Legal document simplification, ODR, dementia caregiver support, rental-agreement escrow, OSINT, tele-psychiatry, contract review, prison reform  
-**Axiom base:** Trust as risk-reduction, time value of justice, bounded rationality, information asymmetry, formal rule semantics  
-**Key stat:** 5 Cr+ pending court cases, 150M+ need mental health support
-
-### 8. Education — Community Innovation & the Indian Way of Learning *(New)*
-**File:** [`education-community-innovation.md`](./education-community-innovation.md)  
-**Focus:** The community innovation school (one craft, deep mastery, 60% core + 40% business/research/soft skills), science + Adhyatmic grounding, rapid mentorship, real-world problem statements, F1-style monthly competitions, open-source output, a freedom-fighter way-of-life & management course, and the wider "how India learns" problems  
-**Axiom base:** Learn by doing and teaching, motivation as the binding constraint, mentor time as the scarce resource, skill + character, inherited ways of life, openness compounding, rightly staged competition, trust by small consistent acts  
-**Key insight:** Technology is optional. Many of these problems are runbooks, curricula, and community systems — not devices.
-
-### 9. Financial Inclusion & the Informal Economy *(New)*
-**File:** [`financial-inclusion-informal-economy.md`](./financial-inclusion-informal-economy.md)  
-**Focus:** UPI/GST-based credit scoring for the thin-file borrower, nano-loans with community guarantee, gold-loan transparency, portable micro-pension, benefit navigators, MSPME invoice discounting, micro-insurance, migrant remittance + savings, SHG credit, money clinics, "trace your money"  
-**Axiom base:** Money as medium of trust, data-exhaust as credit signal, small/frequent shapes, honest and fast claims, transparent pricing, frictionless small savings, one-time digitalisation of seams, portable identity  
-**Key stat:** ~8 in 10 workers are informal; informal credit can cost 24–60%+ APR
+- **12 domains, 144 problems.** Four new domains and a sharper split between planetary health, energy/materials, care, AI trust, education/work, finance, cities, industry/defence, governance and creative rights.
+- **Every row now carries:** impact as *who × how long*, relative crowd density with named players, pilot budget, team composition, time to implementation, a detailed solution, a first-version test, an Aristotelian first-principles chain, validation with a kill criterion, a specific behavioural GTM plan, and **2–3 startup ideas with a feasibility tag**.
+- **No "3-month demo" theatre.** The first version is a pilot, prototype, runbook or protocol that a sceptical outsider can test. The implementation horizon is stated as 4–11 months.
+- **A named payer in every row.** If the only answer is "government should", the row is not ready.
+- **A shared research base and a behavioural playbook.** The evidence spine is in [`docs/research-base-2026.md`](./docs/research-base-2026.md); the GTM method is in [`docs/behavioral-playbook.md`](./docs/behavioral-playbook.md).
+- **Three documented review passes.** See [`docs/reviews.md`](./docs/reviews.md) for what was changed, rejected or rewritten.
 
 ---
 
-## Methodology
+## Repository structure
 
-Each problem was derived with the same discipline:
+| File | Domain | Problems |
+|---|---|---|
+| [`planetary-health-climate.md`](./planetary-health-climate.md) | Planetary Health & Climate Adaptation | 1–12 |
+| [`energy-grid-materials.md`](./energy-grid-materials.md) | Energy, Grid & Critical Materials | 1–12 |
+| [`food-water-land.md`](./food-water-land.md) | Food, Water & Land Systems | 1–12 |
+| [`health-biosecurity-longevity.md`](./health-biosecurity-longevity.md) | Health, Biosecurity & Longevity | 1–12 |
+| [`ai-trust-information.md`](./ai-trust-information.md) | AI Safety, Digital Trust & Information Integrity | 1–12 |
+| [`care-mental-health-development.md`](./care-mental-health-development.md) | Care Economy, Mental Health & Human Development | 1–12 |
+| [`education-skills-work.md`](./education-skills-work.md) | Education, Skills & Future of Work | 1–12 |
+| [`financial-inclusion-real-economy.md`](./financial-inclusion-real-economy.md) | Financial Inclusion & the Real Economy | 1–12 |
+| [`cities-mobility-housing.md`](./cities-mobility-housing.md) | Cities, Mobility & Housing | 1–12 |
+| [`industry-space-defence.md`](./industry-space-defence.md) | Industry, Semiconductors, Space & Defence | 1–12 |
+| [`governance-justice-civic.md`](./governance-justice-civic.md) | Governance, Justice & Civic Infrastructure | 1–12 |
+| [`creative-attention-economy.md`](./creative-attention-economy.md) | Creative, Cultural & Attention Economy | 1–12 |
 
-1. **Research Summary** — key facts, statistics, and constraints per domain
-2. **Axiom List** — fundamental truths that cannot be reduced further
-3. **Derivation** — the logic chain from axiom to problem
-4. **Problem Statements** — tabular, one line per problem, covering:
-   - Problem + why it is still unsolved
-   - Human or planet impact
-   - The proposed approach
-   - A 3-month first version (pilot, prototype, or runbook)
-   - The first-principles derivation
-   - Validation (including the competitive landscape and honest caveats)
+Supporting documents:
+
+| File | Purpose |
+|---|---|
+| [`summary-all.md`](./summary-all.md) | Compact 144-row view with impact, crowd, budget, team/time and startup ideas |
+| [`docs/research-base-2026.md`](./docs/research-base-2026.md) | Shared evidence spine and sources |
+| [`docs/methodology.md`](./docs/methodology.md) | Aristotle, axioms, six filters, scoring and review questions |
+| [`docs/behavioral-playbook.md`](./docs/behavioral-playbook.md) | The GTM vocabulary used in every marketing column |
+| [`docs/gtm-sequences.md`](./docs/gtm-sequences.md) | 30-day launch sequences and scripts by audience |
+| [`docs/reviews.md`](./docs/reviews.md) | Three review passes and the changes they forced |
+| [`index.html`](./index.html) | Single-file explorer (parses the markdown tables in the browser) |
 
 ---
 
-## Quick Stats
+## The 12 domains at a glance
+
+### 1. Planetary Health & Climate Adaptation
+Heat-safe rentals, tree survival warranties, flood mould prevention, smoke refuges, biodiversity net-gain for small builders, roadkill corridors, saltwater intrusion, nurdle capture, cooling-centre activation, disaster debris reuse, heat insurance and night heat mapping.
+**Why now:** extreme weather is the top long-term risk in the WEF 2026 report; prevention is underfunded relative to response.
+
+### 2. Energy, Grid & Critical Materials
+Distribution transformer canaries, rooftop solar grid-support retrofits, data-centre compute curtailment, waste heat to cold storage, motor rewinding efficiency, phase balancing, critical-mineral recovery from smelter dust, magnet recycling, transformer oil lab-on-chip, community solar for renters, LPG auto-shutoff and city-gas methane detection.
+**Why now:** renewables are 33.8% of global electricity, but grids, flexibility and materials are the bottleneck; export controls have made critical-mineral concentration an immediate security problem.
+
+### 3. Food, Water & Land Systems
+Aflatoxin testing at collection, post-harvest loss proof for insurance, rural leak detection, wastewater reuse safety, aquifer recharge verification, aquaculture eDNA, dairy mastitis tests, equipment sharing trust, land boundary mediation, fishers' cold chain, cattle heat stress and event food-waste logistics.
+**Why now:** 2.1 billion people face moderate/severe food insecurity; 13.2% of food is lost after harvest; soil degradation is worsening.
+
+### 4. Health, Biosecurity & Longevity
+Antibiotic stewardship audits, wound-infection photo surveillance, snakebite species ID and antivenom cold chain, maternal blood-loss measurement, SDF caries prevention, diabetic foot negative-pressure kits, PHC stockout prediction, hepatitis B birth-dose kits, long-COVID rehab, menopause navigation, hand-hygiene nudges and blood-culture contamination reduction.
+**Why now:** AMR is associated with 4.7 million deaths a year; ordinary clinical seams still kill and disable millions.
+
+### 5. AI Safety, Digital Trust & Information Integrity
+SMB agent least-privilege audits, prompt-injection firewalls, family voice-scam codes, local-news provenance, AI incident data for insurance, agent payment mandates, AI vendor registries, fine-tune poisoning detection, teen companion audits, digital legacy executors, elder-safe UPI confirmation and court evidence authenticity.
+**Why now:** agents are in production faster than governance; deepfake fraud is measured in billions; small organisations and households are unprotected.
+
+### 6. Care Economy, Mental Health & Human Development
+Dementia caregiver micro-respite, medication reconciliation, social prescribing, school self-harm escalation, men's mental health, wheelchair repair, home-care micro-credentials, suicide/overdose grief support, childcare micro-audits, foster-care transition, caregiver financial navigation and task-shifting supervision.
+**Why now:** more than 1 billion people live with a mental health condition; only 9% of people with major depression receive minimally adequate treatment; care work is invisible and unpaid.
+
+### 7. Education, Skills & Future of Work
+Informal-trade apprenticeships, gig-worker credentials, school repair prioritisation, returnships, vocational English, proof-of-human-skill portfolios, teacher retention early warning, MSME digital apprenticeships, prior-learning recognition, school transport safety, learning-disability screening and first-gen alumni sponsorship.
+**Why now:** 273 million children and youth are out of school; AI is eroding the entry-level tasks that used to build capability.
+
+### 8. Financial Inclusion & the Real Economy
+Rent-to-own equipment, trade-credit insurance, savings commitment devices, debt-trap consolidation, delayed-payment enforcement, cooperative procurement, movable collateral registries, credit repair, funeral insurance, livestock insurance, warehouse receipts and nano invoice discounting.
+**Why now:** 63 million Indian MSMEs, only ~14% with formal credit; the credit gap is US$300–360 billion; informal workers need products shaped to daily cash flow.
+
+### 9. Cities, Mobility & Housing
+Vacant housing activation, street-vending allocation, bus-stop shade audits, black-spot retrofit, school-zone safety, night-shift transport, eviction prevention, construction heat safety, waste-picker integration, loading-bay booking, accessible sidewalks and tenant energy-efficiency fixes.
+**Why now:** 1.18 million road deaths a year; heat and housing risks are concentrated at specific streets and junctions.
+
+### 10. Industry, Semiconductors, Space & Defence
+Drone component authenticity, ammunition lifecycle monitoring, defence procurement compliance, additive-manufacturing powder reuse, robot safety retrofits, semiconductor test fixtures, chip thermal interfaces, space-weather alerts, rad-hard RISC-V, counterfeit component detection, soldier heat/hydration wearables and tactical power management.
+**Why now:** critical-mineral chokepoints, a US$14.4B counter-drone market and capital-intensive supply chains reward reliability and trust layers, not another platform.
+
+### 11. Governance, Justice & Civic Infrastructure
+Local news micro-donations, municipal meeting transparency, prison family connection, restorative justice, legal aid matching, court interpreter scheduling, municipal contract change-order tracking, FOI assistance, police complaint tracking, missing persons case management, disaster relief navigation and court evidence organisers.
+**Why now:** local news and institutional trust are declining; rights without a usable process are not rights in practice.
+
+### 12. Creative, Cultural & Attention Economy
+Consent-based voice licensing, esports integrity, Indian sound libraries, craft provenance, film archive restoration, fan-translation rights, creator contract transparency, comedy joke attribution, cultural misappropriation checks, live-venue acoustics, heritage digitisation and Blender tools for Indian animation.
+**Why now:** generative AI makes output cheap; consent, provenance, taste and cultural context are the scarce assets.
+
+---
+
+## Where to start — 12 high-leverage first picks
+
+If you want a shortlist rather than a catalogue, start with these. They combine large reach or severe harm, a thin crowd, a payer whose existing cost is the failure, and a first version that can be tested in one container of trust.
+
+| Domain | # | Problem | Why it is a first pick | First payer to test |
+|---|---|---|---|---|
+| Planetary | 1 | Heat-Safe Rental Housing Score + Passive Cooling Kit | Split incentive is the blocker; one summer produces proof | Landlord association or insurer |
+| Energy | 1 | Distribution Transformer Canary | The distribution grid is the least instrumented asset | Utility asset-management budget |
+| Food & Water | 1 | Aflatoxin Rapid Test at Collection | Testing at the buyer changes the whole chain | Milk union or maize aggregator |
+| Health | 1 | Antibiotic Stewardship Peer-Comparison Audit | Low-cost, data-only, measurable prescribing change | Clinic association or insurer |
+| AI & Trust | 1 | SMB Agent Least-Privilege Auditor | Timely, cheap, and the blast radius is obvious | Managed service provider or cyber insurer |
+| Care | 1 | Dementia Caregiver Micro-Respite | The binding constraint is a break, not information | Employer benefit or dementia association |
+| Education & Work | 1 | Informal-Trade Apprenticeship Matching | Real skill transmission already exists; matching is missing | Trade association or employer |
+| Finance | 1 | Rent-to-Own Equipment Financing | The asset is the collateral and the income source | Equipment dealer or lender |
+| Cities | 4 | Road-Crash Black-Spot Rapid Retrofit | Crashes cluster; a small fix saves lives this year | Municipal road-safety budget |
+| Industry & Defence | 10 | Counterfeit Electronic Component Detection | Supply-chain trust is a growing security gap | Distributor or defence supplier |
+| Governance | 7 | Municipal Contract Change-Order Leak Detector | Public money leaks through change orders; data is public | Local press or council oversight committee |
+| Creative | 1 | Consent-Based Voice Licensing | AI demand is high; consent infrastructure is missing | Voice-actor union or AI lab |
+
+These are not the only good rows. They are the ones with the shortest path from a credible first version to a payer conversation.
+
+---
+
+## Startup idea layer
+
+Each problem row ends with a **Startup ideas** column containing 2–3 concepts. Every idea carries a compact feasibility tag:
+
+> `fit: 2 people, 6 months, 100-unit pilot with one insurer`
+
+The tag is a claim about the first experiment, not a guarantee. The minimum criteria are:
+
+1. **Team:** 1–3 people, with the named roles being the actual minimum.
+2. **Time:** under 12 months to a legible pilot, demo, runbook or partner decision.
+3. **Experiment:** a specific test, site or partner that can falsify the idea.
+4. **Payer:** a named buyer or budget line to test, not "the market".
+5. **Non-generic:** the idea is tied to the problem's mechanism, not a generic "AI platform" or "marketplace".
+
+The ideas are deliberately small. A startup can be a service co-op, a hardware kit, a data utility, an insurer partnership or a marketplace. The column is a launchpad, not a portfolio recommendation.
+
+## Methodology in one page
+
+Each problem is derived with the same discipline:
+
+1. **Research summary** — 2026 evidence and constraints specific to the domain.
+2. **Axiom list** — physical, informational, economic, behavioural and institutional truths.
+3. **Aristotelian frame** — material, formal, efficient and final causes.
+4. **Derivation** — axiom → mechanism → gap → intervention → falsifiable test.
+5. **Problem row** — impact, crowd, budget, team/time, solution, first version, validation, GTM.
+6. **Review passes** — importance, feasibility/adoption, uniqueness/coherence.
+
+The six filters:
+
+- **Importance:** reach × duration, not headline size.
+- **Neglectedness:** relative team density; "thin" must not mean "impossible".
+- **Feasibility:** 1–3 people, under 12 months, legible first version.
+- **Budget:** usually under US$150K for the first version.
+- **Who pays:** an adopter whose own interest aligns.
+- **Falsifiability:** a kill criterion that can be measured in the pilot.
+
+Read [`docs/methodology.md`](./docs/methodology.md) for the full rubric.
+
+---
+
+## The behavioural GTM layer
+
+Each problem has a marketing plan built on a diagnosis of the binding behavioural gap:
+
+- **Awareness** — they do not know.
+- **Salience** — they know but do not act.
+- **Agency** — they do not believe action is possible.
+- **Trust** — they do not believe the provider.
+- **Friction** — they want to act but the steps are too hard.
+
+The plan then chooses at most three levers: loss aversion, social proof, default, friction removal, commitment, reciprocity, identity, trusted messenger, anchoring, implementation intentions, fresh start, honest scarcity. It names the first 100 users, the loop, and the ethical guardrail.
+
+Read [`docs/behavioral-playbook.md`](./docs/behavioral-playbook.md) for the full method.
+
+---
+
+## Quick stats
 
 | Metric | Value |
-|--------|-------|
-| Total Problem Statements | 166 |
-| Domains covered | 9 |
-| Estimated buildable in ~3 months | 166 (100%) |
-| Mostly tech-heavy (SW / HW / IoT) | 140 across the original 7 domains |
-| Education & financial (mixed; many non-tech/community) | 26 |
-| Replaced because a solution already existed | 17 (across two passes; see notes) |
+|---|---|
+| Problem statements | **144** |
+| Domains | **12** |
+| First version within 12 months | **144 (100%)** |
+| Team size | **1–3 people** in every row |
+| Typical pilot budget | **₹8–40 lakh (US$10–48K)**; some hardware/space pilots up to ₹80 lakh |
+| Rows with a payer or budget-line test | **144** |
+| Rows with a kill criterion | **144** |
+| Rows with a behavioural GTM plan | **144** |
+| Rows with 2–3 startup ideas | **144** |
+| Startup ideas scoped to 1–3 people and under 12 months | **100%** |
+| Crowd labels | Relative density estimates (SATURATED/CROWDED/THIN/NEAR-ZERO), not a census |
+| Previous edition archived | **166 problems, 9 domains** |
 
 ---
 
-## How to Use This Repository
+## How to use this repository
 
-1. **Browse domains** via the table above or `summary-all.md`
-2. **Deep dive** into any domain file for the full problem, its competitive check, and its derivation
-3. **Pick a problem** and build the 3-month first version described
-4. **Contribute back** — add build notes, extend the competitive landscape, or propose new problems
-
----
-
-## Cross-Cutting Concerns (and the "who pays" test)
-
-1. Regulatory approval timelines (health, defence, banking) often exceed the 3-month build cycle
-2. Adoption in rural/trust-based markets requires community engagement beyond the prototype
-3. Interoperability standards must be solved for systemic — not point — solutions
-4. Privacy/security must be built in, not bolted on (DPDP Act 2023 is now a fact of life)
-5. Talent pipeline for hardware+AI remains the binding constraint in India
-6. Every problem, no matter how noble, still has to pass the "who pays" test — the answer is written into each validation line
+1. **Start with the summary** (`summary-all.md`) to scan all 144 rows by impact, crowd and budget.
+2. **Pick a domain** and read the research summary and axioms before the problems.
+3. **Shortlist three problems and their startup ideas** that pass your own skills, access and payer test.
+4. **Run the first-version test** described in the row; do not build the full solution first.
+5. **Talk to the payer** before writing code or buying hardware.
+6. **Use the kill criterion** to stop early. A failed pilot is a result, not a failure.
+7. **Contribute back** with pilot evidence, a better source, or a replacement problem.
 
 ---
 
-## What Changed Recently (and why)
+## Cross-cutting risks (the honest caveats)
 
-- **Domain 8 (Education)** and **Domain 9 (Financial Inclusion)** were added because the original seven domains covered *what India makes* but not *how India thinks and earns*. The education domain deliberately needs almost no technology: most of it is model design, curriculum, and community ritual.
-- **Replacement pass 1:** a few problem statements described things the market has already got. Those were swapped for sharper gaps:
-  - *Grid-tie inverter* → **LPG clean-cooking safety** (inverters are now commodity; LPG accidents kill)
-  - *Rooftop solar estimation tool* → **Classroom IAQ ventilation** (Project Sunroof-type tools exist)
-  - *P2P carbon marketplace* → **PM-KUSUM agri-pump demand response** (carbon aggregation duplicates #9)
-  - *Solar cold storage* → **Onion curing & storage controller** (Ecozen/Inficold already ship at scale)
-  - *Crop-disease AI app* → **Counterfeit pesticide verification** (Plantix already has 100M+ answers)
-  - *TB adherence tracker* → **Adolescent mental-health screening** (99DOTS/Nikshay already runs nationwide)
-  - *The biotech file was also completed from 10 → 20 problems* so every domain has a full set.
-- **Replacement pass 2:** the electronics, defence, and creative files carried entries that overlapped existing open-source or commercial solutions. 11 problems were swapped:
-  - *Pick-and-place machine* → **EMI/EMC pre-compliance kit** (LumenPnP/OpenPnP already ship sub-$1K machines)
-  - *RISC-V IDE + debugger toolchain* → **KiCad procurement & DFM plugin** (PlatformIO + OpenOCD + VS Code already support RISC-V)
-  - *Open-hardware RISC-V debug probe* → **Board bring-up copilot** (CMSIS-DAP, WCH-Link, esp-prog exist)
-  - *WebUSB firmware flasher* → **Flying-probe in-circuit tester** (esptool.js / ESP Web Serial tool exist)
-  - *Drone mission computer* → **GPS-denied visual-inertial odometry** (Pixhawk/CubePilot dominate the hardware)
-  - *SDR spectrum monitoring* → **GNSS jamming & spoofing detection** (RTL-SDR + GNU Radio is the commodity baseline)
-  - *Satellite ground station tracker* → **Cubesat ADCS simulator + HIL testbed** (SatNOGS solves the tracker)
-  - *Open-source CNC controller* → **Machine-tool condition monitoring** (GRBL/LinuxCNC exist)
-  - *Encrypted mesh comms device* → **SDR HF/VHF tactical waveform** (Meshtastic already does the LoRa mesh)
-  - *AI dubbing engine* → **Consent-based Indian voice corpus + licensing layer** (Dubverse already ships 60+ language lip-synced dubbing)
-  - *Open-hardware esports controller* → **Mobile-esports tournament integrity analytics** (sub-₹1,500 gamepads exist)
-- The **Replacement Log** tables (what was swapped and the existing solution found) live in [`docs/replacement-logs.md`](docs/replacement-logs.md).
-- Note: `instructions.md` is referenced in an old README but was never committed; the reference has been dropped.
+1. **Regulatory lag.** Health, defence, insurance and courts move slower than a 12-month build. The first version must be a pilot inside the regulator's sandbox or with a licensed partner.
+2. **Maintenance is the real test.** A sensor, a filter, a clinic protocol or a bus shelter only works if someone is paid to maintain it. Every row names the maintenance owner or the budget line to be tested.
+3. **Trust is local.** A remote brand cannot borrow trust. Most rows require a local partner, a trusted messenger or a cooperative.
+4. **Data access is political.** Utility, hospital, platform and government data are rarely open. The first version must be designed around the data the team can actually get.
+5. **Hardware is hard.** Certification, supply chain, repair and unit economics can consume the whole budget. Hardware rows are deliberately narrow (one feeder, one clinic, one site).
+6. **The who-pays test.** If no institution already pays for the failure, the product is probably a subsidy. That can be fine for a pilot, but it must be named.
+7. **Ethics is a design constraint.** No surveillance disguised as care, no fake scarcity, no exploitation of grief, fear or community trust. The ethical floor is in the behavioural playbook.
+
+---
+
+## Changes from the 2025 edition
+
+- Replaced the 9-domain, 166-problem structure with a **12-domain, 144-problem** structure.
+- Archived all previous domain files in [`archive/2025-v1/`](./archive/2025-v1/), including the old replacement logs.
+- Added **impact duration, crowd density, budget, team/time, first-version test and GTM** to every row.
+- Added **four new domains** (planetary health, AI trust, care economy, governance/civic) and split industry/space/defence into one domain.
+- Removed or rewrote rows that were already well-served by commercial or open-source products, including generic solar marketplaces, battery-management boards, crop-disease classifiers, dubbing engines, pick-and-place machines, mesh radios, generic legal chatbots and generic LMS platforms.
+- Added a shared **2026 research base** and a **behavioural-science playbook**.
+- Ran **three review passes**; the specific changes are documented in [`docs/reviews.md`](./docs/reviews.md).
+
+---
+
+## Contributing
+
+The repository is markdown-first. To add or replace a problem:
+
+1. Add a row to the relevant domain table using the same columns, including 2–3 startup ideas with a `fit:` tag (team size, months, first experiment).
+2. Keep the impact, crowd, budget, team/time, first version, validation and marketing cells concrete.
+3. Add the source or evidence link to the domain research summary or the shared research base.
+4. Run the table validator (`python3 scripts/validate.py`).
+5. Update `summary-all.md` and, if needed, the domain metadata in `index.html`.
+
+The standard is not "is this interesting?" It is: **can a sceptical, capable person read this row and know whether to spend the next six months on it?**

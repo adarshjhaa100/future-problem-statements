@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Future Problem Statements — a live explorer for 166 buildable problems across 9 domains. Markdown on GitHub is the source of truth; the site re-syncs on every push."
+      content="Future Problem Statements — a live explorer for 144 buildable problems across 12 domains. Markdown on GitHub is the source of truth; the site re-syncs on every push."
     />
     <title>Future Problem Statements — Live Explorer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -32,7 +32,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Future Problem Statements — Markdown-First Explorer</title>
-<meta name="description" content="Explore 166 buildable problem statements across 9 domains — parsed live from GitHub markdown. Select, annotate, and export. One file, no build step." />
+<meta name="description" content="Explore 144 buildable problem statements across 12 domains — parsed live from GitHub markdown. Select, annotate, and export. One file, no build step." />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23141f17'/%3E%3Cpath d='M7 22 L13 9 L17.5 17 L20.5 12.5 L25 22' stroke='%23b5e048' stroke-width='2.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='25' cy='9.5' r='1.8' fill='%23f2a83b'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -373,7 +373,7 @@ footer{border-top:1px solid var(--line);margin-top:44px}
         <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#141f17" stroke="#2f4536"/><path d="M7 22 L13 9 L17.5 17 L20.5 12.5 L25 22" stroke="#b5e048" stroke-width="2.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="25" cy="9.5" r="1.8" fill="#f2a83b"/></svg>
         <span class="brand-name" style="font-size:13px">FUTURE PROBLEM STATEMENTS</span>
       </a>
-      <p>166 hand-derived problems an engineer can take from zero to a working first version in about three months — each with a competitive-landscape check and honest caveats.</p>
+      <p>144 hand-derived problems a 1–3 person team can take from zero to a legible first version in under 12 months — each with a competitive-landscape check, 2–3 feasible startup ideas and honest caveats.</p>
     </div>
     <div>
       <h5>Source</h5>
@@ -406,43 +406,57 @@ var REPO = { owner: "adarshjhaa100", name: "future-problem-statements" };
 var RAW = "https://raw.githubusercontent.com/" + REPO.owner + "/" + REPO.name + "/main";
 var COMMIT_API = "https://api.github.com/repos/" + REPO.owner + "/" + REPO.name + "/commits/main";
 var REPO_URL = "https://github.com/" + REPO.owner + "/" + REPO.name;
-var HUES = ["#b5e048","#57c2ad","#f2a83b","#ef6f5a","#8fb7e8","#d3b7f0","#e8c86f","#7fd8c0","#f09a8a"];
+var HUES = ["#b5e048","#57c2ad","#f2a83b","#ef6f5a","#8fb7e8","#d3b7f0","#e8c86f","#7fd8c0","#f09a8a","#a8d8b9","#e8a6c8","#c9c27a"];
 
 var DOMAINS = [
-  { file:"energy-transition.md", code:"energy", index:"01", short:"Energy", name:"Energy Transition & Climate Resilience", isNew:false,
-    focus:"LPG clean-cooking safety, solar soiling prediction, P2P trading, EV charging, second-life batteries, micro-hydro, carbon MRV, classroom IAQ, green hydrogen, biomass logistics, agri-pump demand response",
-    stat:"India targets 500 GW non-fossil capacity by 2030" },
-  { file:"electronics-software.md", code:"elec", index:"02", short:"Electronics", name:"Electronics & Software", isNew:false,
-    focus:"RISC-V cores, micro-RTOS, EMI pre-compliance, KiCad procurement/DFM, MCU FOTA, board bring-up copilots, test fixtures, PMIC design",
-    stat:"India imports ~$35B of semiconductors annually" },
-  { file:"biotech-health-longevity.md", code:"bio", index:"03", short:"Biotech", name:"Biotech, Health & Longevity", isNew:false,
-    focus:"Paper-strip diagnostics, genomic privacy, mental-health screening, respiratory devices, newborn care (phototherapy, hypothermia), anemia, diabetes self-management",
-    stat:"100M diabetics · 0.75 psychiatrists per 100K population" },
-  { file:"defence-space-advanced-manufacturing.md", code:"def", index:"04", short:"Defence & Space", name:"Defence, Space & Advanced Manufacturing", isNew:false,
-    focus:"GPS-denied visual-inertial odometry, GNSS jam/spoof detection, swarm protocols, cubesat ADCS simulation, machine-tool condition monitoring, CBRN sensors, SDR tactical waveform, anti-drone acoustics, wargaming, NavIC",
-    stat:"Defence budget FY27: ₹7.84L Cr" },
-  { file:"agri-water-urbanisation.md", code:"agri", index:"05", short:"Agri & Water", name:"Agri-Food, Water & Urbanisation", isNew:false,
-    focus:"Onion curing & storage, decentralized wastewater, stubble burning, soil health sensors, water leak detection, counterfeit-input verification, desalination, smart irrigation, digital twins",
-    stat:"72% of urban sewage untreated · 40% food lost post-harvest" },
-  { file:"creative-taste-economy.md", code:"crea", index:"06", short:"Creative", name:"Creative & Strategic Taste Economy", isNew:false,
-    focus:"Consent-based Indian voice corpus, IP valuation, indie game publishing, textile patterns, OTT recommendation, mobile-esports tournament integrity, film pre-production, sound libraries",
-    stat:"~$30B media & entertainment sector · 500M gamers" },
-  { file:"high-trust-services_law_mental_health_osint.md", code:"trust", index:"07", short:"Trust Services", name:"High-Trust Services — Law, Mental Health, OSINT", isNew:false,
-    focus:"Legal document simplification, ODR, dementia caregiver support, rental-agreement escrow, OSINT, tele-psychiatry, contract review, prison reform",
-    stat:"5 Cr+ pending court cases · 150M+ need mental-health support" },
-  { file:"education-community-innovation.md", code:"edu", index:"08", short:"Education", name:"Education — Community Innovation & the Indian Way of Learning", isNew:true,
-    focus:"The community innovation school (60% craft mastery + 40% business/research/soft skills), Indian science + Adhyatmic scaffolding, F1-style monthly competitions, freedom-fighter management & way-of-life course",
-    stat:"Technology is optional — runbooks, curricula, community systems" },
-  { file:"financial-inclusion-informal-economy.md", code:"fin", index:"09", short:"Fin. Inclusion", name:"Financial Inclusion & the Informal Economy", isNew:true,
-    focus:"UPI/GST credit scoring for the thin-file borrower, nano-loans with community guarantee, gold-loan transparency, portable micro-pension, benefit navigators, SHG credit, money desks, trace-your-money",
-    stat:"~8 in 10 workers informal · informal credit 24–60%+ APR" }
+  { file:"planetary-health-climate.md", code:"planet", index:"01", short:"Planetary", name:"Planetary Health & Climate Adaptation", isNew:true,
+    focus:"Heat-safe rentals, tree survival, flood mould, smoke refuges, biodiversity net-gain, roadkill corridors, saltwater intrusion, nurdle capture, cooling centres, debris reuse, heat insurance, night heat mapping",
+    stat:"Extreme weather is the top long-term risk; prevention is underfunded" },
+  { file:"energy-grid-materials.md", code:"energy", index:"02", short:"Energy & Materials", name:"Energy, Grid & Critical Materials", isNew:true,
+    focus:"Transformer monitoring, solar grid-support retrofits, compute curtailment, waste heat, motor rewinding, phase balancing, critical mineral recovery, magnet recycling, transformer oil chips, community solar, LPG safety, methane detection",
+    stat:"Renewables are 33.8% of global electricity; grids and materials are the bottleneck" },
+  { file:"food-water-land.md", code:"food", index:"03", short:"Food & Water", name:"Food, Water & Land Systems", isNew:true,
+    focus:"Aflatoxin testing, post-harvest loss proof, rural leak detection, wastewater reuse safety, aquifer recharge, aquaculture eDNA, mastitis tests, equipment sharing, land mediation, fishers' cold chain, cattle heat, event food rescue",
+    stat:"2.1B food insecure · 13.2% of food lost after harvest" },
+  { file:"health-biosecurity-longevity.md", code:"health", index:"04", short:"Health", name:"Health, Biosecurity & Longevity", isNew:true,
+    focus:"Antibiotic stewardship, wound surveillance, snakebite, maternal haemorrhage, SDF caries prevention, diabetic foot, PHC stockouts, hepatitis B birth dose, long COVID, menopause, hand hygiene, blood culture contamination",
+    stat:"AMR associated with 4.7M deaths a year; ordinary clinical seams still kill" },
+  { file:"ai-trust-information.md", code:"ai", index:"05", short:"AI & Trust", name:"AI Safety, Digital Trust & Information Integrity", isNew:true,
+    focus:"Agent least-privilege audits, prompt-injection firewalls, voice-scam codes, local-news provenance, AI incident data, payment mandates, vendor registries, poisoning detection, teen companion audits, digital legacy, elder-safe UPI, court evidence",
+    stat:"Agents in production faster than governance; deepfake fraud in the billions" },
+  { file:"care-mental-health-development.md", code:"care", index:"06", short:"Care", name:"Care Economy, Mental Health & Human Development", isNew:true,
+    focus:"Dementia micro-respite, medication reconciliation, social prescribing, school self-harm escalation, men's mental health, wheelchair repair, home-care credentials, grief support, childcare audits, foster transitions, caregiver finance, supervision",
+    stat:"1B+ with a mental health condition; only 9% of depression gets adequate care" },
+  { file:"education-skills-work.md", code:"edu", index:"07", short:"Education & Work", name:"Education, Skills & Future of Work", isNew:true,
+    focus:"Informal apprenticeships, gig credentials, school repairs, returnships, vocational English, proof of human skill, teacher retention, MSME apprenticeships, prior learning, school transport, learning differences, first-gen sponsorship",
+    stat:"273M children and youth out of school; AI is eroding entry-level tasks" },
+  { file:"financial-inclusion-real-economy.md", code:"fin", index:"08", short:"Finance", name:"Financial Inclusion & the Real Economy", isNew:true,
+    focus:"Rent-to-own equipment, trade-credit insurance, savings commitment, debt consolidation, delayed payment, cooperative procurement, movable collateral, credit repair, funeral and livestock insurance, warehouse receipts, nano invoice discounting",
+    stat:"63M Indian MSMEs; only ~14% have formal credit" },
+  { file:"cities-mobility-housing.md", code:"city", index:"09", short:"Cities", name:"Cities, Mobility & Housing", isNew:true,
+    focus:"Vacant housing, vending allocation, bus-stop shade, black-spot retrofit, school zones, night transport, eviction prevention, construction heat, waste pickers, loading bays, accessible sidewalks, tenant efficiency",
+    stat:"1.18M road deaths a year; risk concentrates at specific streets and junctions" },
+  { file:"industry-space-defence.md", code:"ind", index:"10", short:"Industry & Defence", name:"Industry, Semiconductors, Space & Defence", isNew:true,
+    focus:"Drone component authenticity, ammunition lifecycle, procurement compliance, AM powder reuse, robot safety, chip test fixtures, thermal interfaces, space weather, rad-hard RISC-V, counterfeit parts, soldier heat, tactical power",
+    stat:"Critical-mineral chokepoints and a US$14.4B counter-drone market" },
+  { file:"governance-justice-civic.md", code:"gov", index:"11", short:"Governance", name:"Governance, Justice & Civic Infrastructure", isNew:true,
+    focus:"Local news micro-donations, municipal meetings, prison family connection, restorative justice, legal aid matching, court interpreters, contract change-order tracking, FOI, police complaints, missing persons, disaster relief, court evidence",
+    stat:"Local news and institutional trust are declining; rights need usable processes" },
+  { file:"creative-attention-economy.md", code:"crea", index:"12", short:"Creative", name:"Creative, Cultural & Attention Economy", isNew:true,
+    focus:"Consent-based voice licensing, esports integrity, Indian sound library, craft provenance, film restoration, fan-translation rights, creator contracts, comedy attribution, cultural checks, venue acoustics, heritage digitisation, Blender tools",
+    stat:"AI makes output cheap; consent, provenance, taste and context are scarce" }
 ];
 
-/* Offline snapshot — raw markdown of one full domain file, parsed by the same engine. */
-var SNAPSHOT = { file: "financial-inclusion-informal-economy.md", md:
-"# Domain 9: Financial Inclusion & the Informal Economy\n\n## Section 1: Credit & Savings for the Thin-File Borrower\n\n| # | Problem Statement | Details | Domain Type | Why Unsolved/Inefficient | Impact | Proposed Solution | 3-Month Pilot | Derivation | Validation |\n|---|---|---|---|---|---|---|---|---|---|\n| 1 | **A credit score for the informal borrower built from UPI/GST/mobility data — with the borrower's consent and a dispute handle** | Kirana owners, vendors, and workers have transaction data but no score; banks say \"no data\" and lend at 20–30% or not at all. | SW | Data is siloed inside apps and banks; no open, consent-first scoring layer exists for the thin-file borrower. | Human: access to fair, formal credit | An open scoring layer: user authorises data (UPI/GST/mobility), a transparent score is produced, lenders subscribe to it, and the borrower can see and dispute the score. | Pilot scoring on 500 self-declared users against 3 lenders; measure approval lift. | A2 + A8 → transaction history is the credit file; consent + portability are the missing pieces. | RBI sandbox experiments and fintech credit-scoring studies show thin-file lending works; no open consent-first layer exists for India's informal workers. |\n| 2 | **Micro-credit (₹1–5K) with community guarantee and daily-repayment shape for daily-wage earners** | A rickshaw puller or daily-wage worker needs ₹2,000 before wages land; the only options are informal lenders at crushing rates. | SW+IOT | Formal lenders can't price tiny, frequent loans; repayment must match daily cash flow, not monthly. | Human: escape from the debt trap at the bottom of the pyramid | A nano-loan product underwritten by community/SHG guarantee, repayable in daily or weekly micro-instalments via UPI auto-debit, with a group-default reciprocity rule. | 3-month run with a worker SHG: 200 loans of ₹1–5K, measure default and interest rate achieved. | A1 + A3 → community guarantee replaces collateral; daily repayment matches daily income. | RBI's ULI/open-credit data initiatives and SHG loan-performance data support this shape; no product operationalises it at scale. |\n| 3 | **Gold-loan and pawnbroker transparency: live gold price + true loan-to-value + real APR, at the counter** | Families pawn jewellery in a hurry and are told \"rate\" in a language that hides the real cost; pricing varies wildly shop to shop. | SW | Gold-loan NBFCs and pawnbrokers disclose poorly; there is no independent, checkable benchmark at the point of lending. | Human: honest pricing, family assets protected | An app/IVR benchmark: live gold price, standard loan-to-value, a real-APR calculator, and shop ratings; the borrower can compare before handing over gold. | Publish the benchmark for one city's shops; partner one NBFC for honest-disclosure pilot. | A5 → transparency is a public good; an informed borrower disciplines the whole market. | RBI gold-loan guidelines and consumer-complaint data show exactly this opacity; no neutral benchmark exists. |\n| 4 | **Auto-enrol, portable micro-pension for informal and gig workers** | Savings for old age almost never happen for informal workers: enrolment is paperwork-heavy, and pension pots die with every job change. | SW | PFRDA/NPS has low uptake; portability is broken; employers (who in the informal economy are often the platform or the contractor) don't enrol anyone. | Human: dignified old age for the whole workforce | A one-click auto-enrol on eShram/platform onboarding, employer micro-contribution option, a portable pension \"pot\" that follows the worker across jobs, and a simple IVR to check balance and change employers. | Integrate with one state's eShram onboarding and one gig platform; measure enrolment lift. | A6 + A7 → savings die on friction; one-time KYC + auto-enrol changes the arithmetic. | PFRDA enrolment and lapsed-account data show the drop-off; portable-pension experiments elsewhere prove the fix. |\n| 5 | **A welfare-benefit navigator for unorganised workers (eShram-linked)** | A construction worker or domestic worker is eligible for state schemes, insurance, and grants they have never heard of; application is multi-agency and confusing. | SW | eShram registered ~30 crore workers but benefits are scattered across ministries, states, and portals; nobody tells the worker what they qualify for. | Human: entitled benefits actually received | A benefit navigator: worker profile → matched list of eligible schemes with clear, vernacular application flows, deadline alerts, and application-status tracking. | Build the eligibility map for one state's schemes; pilot with 1,000 workers. | A7 → the seams are the cost; one-time digital linking makes benefit delivery cheap and findable. | Public documents on unclaimed welfare (labour boards, PMSBY/PMJJBY uptake) show the gap; no open navigator exists. |\n| 6 | **MSME nano invoice-discounting on GSTN data for the sub-₹1 Cr firm** | A small maker with a GST-verified invoice to a big buyer can't access working capital at fair rates; TReDS only serves larger firms. | SW | Discounting is gated to large firms; for nano-MSMEs the invoice is real collateral that no one will price. | Human: working capital at fair cost for small firms | A nano-discounting marketplace: GST-verified invoice upload → automated credit assessment → competitive bids from lenders/buyers → settlement and repayment on UPI. | Pilot with 50 nano-MSMEs and one anchor buyer. | A2 + A8 → a verifiable receivable is collateral; verification + auction is the whole product. | GSTN data availability and TReDS coverage limits are documented; the sub-₹1 Cr layer is empty. |\n\n## Section 2: Insurance, Trust & Community Products\n\n| # | Problem Statement | Details | Domain Type | Why Unsolved/Inefficient | Impact | Proposed Solution | 3-Month Pilot | Derivation | Validation |\n|---|---|---|---|---|---|---|---|---|---|\n| 7 | **Life + accident + treatment micro-insurance for gig, domestic, and construction workers with family cover, UPI premiums, and honest claims** | One accident or hospital stay wipes out an informal family; the premium they can pay is tiny, and distrust of insurance runs deep because claims are slow and denied. | SW | Insurance products exist for salaried people; the informal worker is uninsurable in practice — premium, paperwork, and claim behaviour all mismatch. | Human: families protected from a single catastrophic event | A jargon-free micro-policy (accident + treatment + family) priced for daily-wage workers, UPI auto-premium, vernacular explanation, and a claims pipeline that pays out in days with public claim-settlement data. | 5,000-policy pilot through one worker cooperative; track claims turnaround and renewal. | A4 → insurance lives or dies on honest, fast claims; disclosure of settlement data is the trust engine. | PMJJBY/PMSBY enrolment and claim-complaint data show the trust gap; cooperative insurance pilots elsewhere prove the model. |\n| 8 | **Migrant-worker remittance + savings circle: zero-fee transfer and a shared savings pot** | A migrant in a city sends money home at a cost, and every transfer is separate from any savings habit; the family gets money but no safety net. | SW | Remittance is already digital, but it is a one-way pipe; there is no product that wraps savings and family insurance around it. | Human: money moves home free, and a savings habit travels with it | A zero-fee UPI remittance rail plus an optional shared savings pot (auto-rounded micro-deposits) and family-cover insurance, on both smartphone and IVR feature-phone. | 1,000-migrant pilot on one corridor; measure remittance volume and savings uptick. | A3 + A6 → match the shape of migrant life: small, frequent, family-shaped, mobile-first. | Remittance-cost and saving-behaviour studies; no product bundles zero-fee transfer with savings and insurance for India. |\n| 9 | **Community-guaranteed nano-credit for women's SHGs with reputation scoring and default reciprocity** | Self-help groups are India's best credit infrastructure, but group loans are batch-sized and slow; good repayment history is not reused as a reputation asset. | SW | Banks treat SHGs as one-off borrowers; group reputation is not portable, and paperwork punishes the group's own discipline. | Human: women's enterprise credit, dignity, and continuity | A SHG credit protocol: group reputation score, nano-loans to individual members against group guarantee, reciprocity rule for defaults, and a visible record that unlocks bigger loans over time. | Pilot with 10 SHGs (200 women); track repayment and loan-size growth. | A1 + A8 → the group's word is collateral; making it visible and reusable is the innovation. | SHG-NRLM performance data; the group-lending model is proven — the portability layer is missing. |\n| 10 | **\"Money clinic\" for one-person firms: demystifying GST, provident fund, and labour returns** | A tailor or freelancer lives in fear of compliance; one wrong filing means penalties they can't afford, so they stay entirely out of the formal system. | SW | Compliance tools target accountants; the one-person firm needs the *explained* version — what to file, when, with what, in plain language. | Human: formalisation without fear; dignity of the self-employed | A guided, vernacular \"file my returns\" assistant for the micro-firm: plain-language obligations, auto-computed forms, deadline reminders, and penalty-avoidance checks — plus a trusted-agent referral for anything complex. | 500 micro-firms through one chamber/association; measure first-filing completion. | A5 + A7 → an informed, fear-free micro-firm is the unit of formalisation; explanation is the product. | GST composition-scheme and MSME compliance data show the fear gap; no human-first vernacular compliance guide exists. |\n| 11 | **A trusted \"village money desk\" run by a local, offering fair cash-management and grievance redress** | Even with UPI, a village's cash needs and complaints (wrong deduction, frozen card, scam) have no local human to resolve them; scams thrive on that gap. | Community model | Trust is local (A8); tech companies are remote; there is no recognised local intermediary for money problems. | Human: fraud reduced, grievances heard, villages included | A trained local \"money desk\": cash-in/out facilitation, scam awareness, complaint registration to the right authority, and a simple ledger — paid by the community. | One village pilot for a quarter; track scam cases caught and complaints resolved. | A8 → trust is local; a known face resolving money problems is the real anti-fraud layer. | Village-level digital-scam statistics and the success of trusted local intermediaries (postmasters, ASHA-like roles) support this; no open money-desk model exists. |\n| 12 | **A pension and claims \"trace-your-money\" tool for the informal worker** | Workers who did save (EPF, NPS, government schemes) lose track of their own money across jobs and states; claiming is a maze, so small pots go unclaimed. | SW | Claiming and tracing are fragmented across EPFO, NPS, and state schemes; a worker who moved jobs has no single view of their own money. | Human: workers actually receive what they saved; dignity in retirement | A single \"trace your money\" interface: one click, all your pension/EPF/gratuity pots across employers and schemes, with status, claim buttons, and vernacular guidance. | Wire the EPFO and NPS lookups for a pilot cohort; measure unclaimed pots rediscovered. | A6 + A7 → unclaimed money is the cost of friction; one view, one click is the fix. | EPFO unclaimed-amount reports and NPS dormant accounts are public; no unified tracer exists. |"
-};
+/* Offline snapshot — a small slice of one new domain file, parsed by the same engine. */
+var SNAPSHOT = { file: "planetary-health-climate.md", md: `# Domain 1: Planetary Health & Climate Adaptation
 
+## Problem Statements
+
+| # | Problem | Type | Why unsolved | Crowd | Impact | Budget | Team & time | Proposed solution | First version | First principles | Validation | Marketing | Startup ideas |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | **Heat-Safe Rental Housing Score + Passive Cooling Kit** | HW+SW+process | Landlords do not pay cooling bills and can re-let to someone else; tenants cannot drill or install; building energy labels score the shell, not the lived heat of a top-floor unit. | THIN. Energy-performance certificates and academic heat studies exist; no tenancy-time heat score plus retrofit kit at this price point. | ~100M+ renters in hot-climate cities; 3–6 dangerous months a year; heat stroke, sleep loss, pregnancy and child-development effects compound for decades. | ₹25–40L (US$30–48K) for 100 units in two wards. | 3 people (building physics/hardware, field ops, data) · 9 months. | In-unit temperature/humidity/CO₂ sensor; tenancy-safe kit; a 0–100 Heat-Safe score disclosed before lease; landlord gets an insurance or utility rebate, tenant gets heat alerts and a repair line. | 100 rentals in two cities over one summer; pre/post indoor peak temperature, kit uptake, lease renewal, landlord NPS. | M: heat enters through roof and windows. F: split incentive. E: disclose at lease, install kit, share rebate. Telos: safe shelter. | Heat-health evidence is strong; rental heat scores are rare. Kill if median peak indoor temperature drop is under 2°C. | Audience: landlords and tenants. Hook: "Your top floor was 6.4°C hotter last May; the kit costs less than one month of cooling." Levers: loss aversion, social proof, reciprocity. Channel: apartment WhatsApp groups, landlord associations. First 100: three buildings. Loop: score → insurer discount → more landlords. Ethics: aggregate data only; no tenant surveillance. | 1) HeatScore — landlord/insurer heat-score SaaS; fit: 2 people, 6 months, pilot 100 units with one insurer. 2) CoolLease — tenancy-safe cooling kit plus installation marketplace; fit: 3 people, 9 months, two-city summer pilot. 3) HeatSafe API — building heat-risk data for insurers and municipalities; fit: 1–2 people, 5 months, validate against 500 sensor readings. |
+| 2 | **Tree Survival Warranty + Steward Network** | Process+HW | Plantation drives count saplings planted, not trees alive after 24 months; maintenance budgets are separate from planting budgets; nobody owns watering. | CROWDED in planting; THIN in survival warranties and steward operations. | Urban heat, air and flood risk; a tree lost at year two forfeits 30–50 years of shade and carbon; low-income neighbourhoods have the least canopy. | ₹30–50L (US$35–60K) for 1,000 trees in one ward. | 3 people (urban forestry, operations, sensor/data) · 11 months. | Adopt-a-tree with a moisture sensor or manual moisture card, a paid local steward, a 24-month survival warranty, and municipal payment on surviving trees; public canopy dashboard. | 1,000 trees in one ward over 9 months; 9-month survival, watering compliance, cost per surviving tree; 24-month warranty tracked separately. | M: saplings need water, soil volume and protection. F: planting and maintenance budgets are split. E: warranty plus steward plus payment-on-survival. Telos: intergenerational shade. | Urban forestry data show high sapling mortality; warranty models are thin. Kill if survival is below 70%. | Audience: municipal engineers, resident welfare associations, CSR sponsors. Hook: "You paid for 1,000 trees; 380 are alive. Pay for survivors instead." Levers: loss aversion, social proof, identity. Channel: ward meetings, municipal audit, local press. First 100: one ward. Loop: survival dashboard → CSR sponsors → more wards. Ethics: publish failures. | 1) Canopy Warranty — survival-linked planting contracts for municipalities and CSR; fit: 3 people, 9 months, 1,000-tree pilot. 2) Steward Network — paid local tree-care marketplace; fit: 2 people, 6 months, one ward. 3) Canopy Credit — verified tree-survival data for CSR and carbon buyers; fit: 1–2 people, 5 months, audit 10 sites. |
+| 3 | **Flood Mould Prevention Kit + Drying Library** | HW+process | Relief focuses on food and shelter; mould grows in 48–72 hours; drying equipment is rented too late; insurers treat mould as maintenance. | THIN. Remediation companies exist but are expensive and post-hoc; no standard first-72-hour household kit. | Millions are flooded each year; asthma, allergies and respiratory infections persist for years, especially in children; repeated floods compound the damage. | ₹15–25L (US$18–30K) for 200 households. | 2 people (public health, operations) · 6 months. | A ₹1,500–2,500 kit plus a community drying library and an insurer or landlord trigger; SMS/IVR protocol in the local language. | 200 flood-affected households in one city; mould score at day 7 and day 30, respiratory symptoms, kit use. | M: mould needs moisture, cellulose and time. F: relief and housing repair are separate. E: kit plus shared drying equipment plus trigger. Telos: healthy homes. | Mould-health evidence is strong; post-flood remediation is costly. Kill if mould score is not reduced by 30% at day 30. | Audience: flood-prone households, municipal disaster cell, insurers. Hook: "Mould starts in 48 hours; the kit costs less than one clinic visit." Levers: loss aversion, trusted messenger, default. Channel: relief camps, places of worship, ward WhatsApp. First 100: one flood ward. Loop: insurer claim data → pre-position kits. Ethics: no fear beyond the real risk. | 1) DryFirst — household mould-prevention kit plus SMS protocol; fit: 2 people, 6 months, 200-household flood pilot. 2) Drying Library — shared dehumidifier and fan rental co-op; fit: 2 people, 5 months, one flood ward. 3) FloodClean Claims — insurer-backed remediation verification; fit: 2 people, 7 months, one insurer pilot. |` };
 /* ================= utils ================= */
 var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 function $(s, c){ return (c || document).querySelector(s); }
@@ -488,8 +502,10 @@ var NORM = {
   "whyit'sunsolved":"whyUnsolved","impact":"impact","proposed":"solution","proposedsolution":"solution",
   "approach":"solution","solution":"solution","3monthfirstversion":"pilot","3-monthpilot":"pilot",
   "3monthpilot":"pilot","pilot":"pilot","firstversion":"pilot","derivation":"derivation",
-  "first-principlesderivation":"derivation","validation":"validation","competitivecheck":"validation",
-  "validation&caveats":"validation","caveats":"validation","notes":"notes"
+  "firstprinciples":"derivation","first-principlesderivation":"derivation","validation":"validation",
+  "competitivecheck":"validation","validation&caveats":"validation","caveats":"validation","notes":"notes",
+  "crowd":"crowd","relativecrowd":"crowd","budget":"budget","team&time":"team","team":"team",
+  "marketing":"gtm","gtm":"gtm","startupideas":"startupIdeas","startupidea":"startupIdeas"
 };
 function splitRow(line){
   var s = line.trim();
@@ -562,9 +578,11 @@ function parseDomain(md, meta){
       domainCode: meta.code, domainFile: meta.file, domainName: meta.name,
       domainIndex: meta.index, section: r.section,
       title: r.title, details: r.details || "", type: r.type || "",
-      whyUnsolved: r.whyUnsolved || "", impact: r.impact || "",
+      whyUnsolved: r.whyUnsolved || "", crowd: r.crowd || "", impact: r.impact || "",
+      budget: r.budget || "", team: r.team || "",
       solution: r.solution || "", pilot: r.pilot || "",
-      derivation: r.derivation || "", validation: r.validation || ""
+      derivation: r.derivation || "", validation: r.validation || "", gtm: r.gtm || "",
+      startupIdeas: r.startupIdeas || ""
     };
   });
 }
@@ -574,11 +592,16 @@ function mdOf(p, note){
     "- **Type:** " + (p.type || "—")];
   if (p.details) L.push("- **Details:** " + p.details);
   if (p.whyUnsolved) L.push("- **Why unsolved:** " + p.whyUnsolved);
+  if (p.crowd) L.push("- **Crowd:** " + p.crowd);
   if (p.impact) L.push("- **Impact:** " + p.impact);
+  if (p.budget) L.push("- **Budget:** " + p.budget);
+  if (p.team) L.push("- **Team & time:** " + p.team);
   if (p.solution) L.push("- **Proposed solution:** " + p.solution);
-  if (p.pilot) L.push("- **3-month pilot:** " + p.pilot);
-  if (p.derivation) L.push("- **Derivation:** " + p.derivation);
+  if (p.pilot) L.push("- **First version:** " + p.pilot);
+  if (p.derivation) L.push("- **First principles:** " + p.derivation);
   if (p.validation) L.push("- **Validation:** " + p.validation);
+  if (p.gtm) L.push("- **Behavioural GTM:** " + p.gtm);
+  if (p.startupIdeas) L.push("- **Startup ideas:** " + p.startupIdeas);
   if (note) L.push("", "> **My note:** " + note);
   return L.join("\n");
 }
@@ -649,7 +672,7 @@ function filteredProblems(){
     if (ui.domain !== "all" && p.domainCode !== ui.domain) return false;
     if (ui.type && typeTokens(p.type).indexOf(ui.type) === -1) return false;
     if (!q) return true;
-    return [p.title, p.details, p.impact, p.solution, p.pilot, p.section, p.domainName, p.whyUnsolved]
+    return [p.title, p.details, p.impact, p.solution, p.pilot, p.section, p.domainName, p.whyUnsolved, p.crowd, p.budget, p.team, p.gtm, p.startupIdeas]
       .join(" ").toLowerCase().indexOf(q) !== -1;
   });
 }
@@ -713,7 +736,7 @@ function renderExplorerList(){
         '<span class="num">' + String(p.num).padStart(2, "0") + "</span>" +
         "<div style='min-width:0;flex:1'>" +
         '<p class="title">' + esc(p.title) + "</p>" +
-        (p.details ? '<p class="det">' + esc(p.details) + "</p>" : "") +
+        (p.details || p.impact ? '<p class="det">' + esc(p.details || p.impact) + "</p>" : "") +
         '<div class="tags"><span class="sec">' + esc(sec) + "</span><span>" + tokensHtml(p.type) + "</span>" +
         (hasNote ? '<span class="noteflag"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>note</span>' : "") +
         "</div></div>" +
@@ -733,11 +756,16 @@ var drawerOpen = false;
 var FIELDS = [
   ["details", "Details", ""],
   ["whyUnsolved", "Why still unsolved", "f-coral"],
-  ["impact", "Human / planet impact", "f-amber"],
+  ["crowd", "Relative crowd / who is working on it", ""],
+  ["impact", "Human / planet impact (reach × duration)", "f-amber"],
+  ["budget", "Pilot budget", ""],
+  ["team", "Team & time to implement", ""],
   ["solution", "Proposed solution", "f-lime"],
-  ["pilot", "3-month first version", "f-teal"],
-  ["derivation", "First-principles derivation", ""],
-  ["validation", "Validation & competitive check", ""]
+  ["pilot", "First version / pilot", "f-teal"],
+  ["derivation", "First principles & feasibility", ""],
+  ["validation", "Validation & kill criteria", ""],
+  ["gtm", "Behavioural-science GTM", ""],
+  ["startupIdeas", "Startup ideas (2–3, with feasibility)", ""]
 ];
 function openDrawer(id){
   var p = byId[id];
@@ -796,7 +824,7 @@ function renderShortlist(){
     el.innerHTML = '<div class="empty-big reveal">' +
       '<svg class="compass" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m16.2 7.8-2.2 6.2-6.2 2.2 2.2-6.2z"/></svg>' +
       "<h2>Your shortlist is empty</h2>" +
-      "<p>Browse the " + (problems.length || 166) + " problem statements, bookmark the ones worth a 3-month first version, and drop notes on each. Everything is saved in this browser.</p>" +
+      "<p>Browse the " + (problems.length || 144) + " problem statements, bookmark the ones worth an under-12-month first version, and drop notes on each. Everything is saved in this browser.</p>" +
       '<button class="btn-lime" style="margin-top:28px" data-action="go-explorer">Open the explorer ' +
       '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>' +
       '<p class="hint">tip — the bookmark icon on any row adds it here instantly</p></div>';
@@ -843,7 +871,7 @@ function renderShortlist(){
         "<span>" + tokensHtml(p.type) + "</span></div>" +
         "<h4>" + esc(p.title) + "</h4>" +
         (p.impact ? '<p class="impact"><b>Impact —</b> ' + esc(p.impact) + "</p>" : "") +
-        (p.pilot ? '<p class="pilot"><b>3-month —</b> ' + esc(p.pilot) + "</p>" : "") +
+        (p.pilot ? '<p class="pilot"><b>First version —</b> ' + esc(p.pilot) + "</p>" : "") +
         "</div>" +
         '<button class="bkm on" data-action="toggle-select" data-id="' + esc(p.id) + '" aria-label="Remove from shortlist" title="Remove from shortlist">' +
         '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.5h12a.5.5 0 0 1 .5.5v16.5l-6.5-4-6.5 4V4a.5.5 0 0 1 .5-.5z"/></svg></button></div>' +
@@ -900,13 +928,13 @@ function renderPublish(){
     '<div class="step panel reveal"><span class="ghost">03</span><p class="sk">Step 03</p><h3>Work in markdown from now on</h3>' +
     "<p>Add a row to any domain table, fix a validation line, or drop in a whole new domain file (add it to the <code>DOMAINS</code> list near the top of the script so the fetcher knows its filename). The live site picks changes up automatically because <code>raw.githubusercontent.com</code> always serves the latest <code>main</code> with open CORS headers. Visitor selections and notes live in each visitor's own <code>localStorage</code> — there is nothing else to host.</p>" +
     '<div style="margin-top:16px"><div class="codehead"><span>what the page fetches on load</span></div>' +
-    '<pre class="code-block">' + esc(RAW) + "/energy-transition.md\n" + esc(RAW) + "/electronics-software.md\n… all 9 domain files</pre></div></div>" +
+    '<pre class="code-block">' + esc(RAW) + "/planetary-health-climate.md\n" + esc(RAW) + "/energy-grid-materials.md\n… all 12 domain files</pre></div></div>" +
 
     '<div class="step panel reveal"><span class="ghost">04</span><p class="sk">Step 04 · optional</p><h3>Polish</h3>' +
     "<ul>" +
     "<li>" + check + "<span><em style='font-style:normal;color:var(--fog)'>Custom domain</em> — add it under Pages settings plus a <code>CNAME</code> record; HTTPS is a checkbox.</span></li>" +
     "<li>" + check + "<span><em style='font-style:normal;color:var(--fog)'>Caching</em> — raw markdown responses cache briefly; a hard refresh always shows the latest.</span></li>" +
-    "<li>" + check + "<span><em style='font-style:normal;color:var(--fog)'>Fully static bundle</em> — if you ever want zero runtime fetches, inline the nine files into the script at build time; markdown in the repo stays the only place you edit.</span></li>" +
+    "<li>" + check + "<span><em style='font-style:normal;color:var(--fog)'>Fully static bundle</em> — if you ever want zero runtime fetches, inline the twelve files into the script at build time; markdown in the repo stays the only place you edit.</span></li>" +
     "</ul></div>" +
 
     '<div class="panel pubfoot reveal"><div style="display:flex;align-items:center;gap:13px">' +
@@ -1044,7 +1072,7 @@ function load(){
 
 /* ticker */
 (function(){
-  var items = ["166 problem statements", "9 domains", "every one buildable in ~3 months", "markdown is the source of truth", "live from github", "select · note · export", "axiom → derivation → problem", "one file · zero build steps"];
+  var items = ["144 problem statements", "12 domains", "1–3 person teams · under 12 months", "markdown is the source of truth", "live from github", "select · note · export", "axiom → derivation → problem", "one file · zero build steps"];
   var half = items.map(function(t, i){ return "<span" + (i % 2 ? " class='alt'" : "") + ">" + esc(t) + "</span><i>✦</i>"; }).join("");
   $("#tickerTrack").innerHTML = half + half;
 })();
