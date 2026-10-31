@@ -25,7 +25,7 @@ DOMAINS = [
 REQUIRED = [
     "problem", "type", "why unsolved", "crowd", "impact", "budget",
     "team & time", "proposed solution", "first version", "first principles",
-    "validation", "marketing", "startup ideas",
+    "validation", "marketing", "startup ideas", "work status",
 ]
 EXPECTED_PER_DOMAIN = 12
 
@@ -76,9 +76,13 @@ def main() -> int:
             if title in titles:
                 errors.append(f"duplicate title: {title!r} in {titles[title]} and {filename}")
             titles[title] = filename
-            for field in ("impact", "crowd", "budget", "team & time", "proposed solution", "first version", "validation", "marketing", "startup ideas"):
+            for field in ("impact", "crowd", "budget", "team & time", "proposed solution", "first version", "validation", "marketing", "startup ideas", "work status"):
                 if not record.get(field, "").strip():
                     errors.append(f"{filename}: row {cs[0]} has empty {field!r}")
+            work = record.get("work status", "")
+            for token in ("Worked on:", "Open:", "Risk:", "Conf:"):
+                if token not in work:
+                    errors.append(f"{filename}: row {cs[0]} work status missing {token!r}")
         if rows != EXPECTED_PER_DOMAIN:
             errors.append(f"{filename}: {rows} rows, expected {EXPECTED_PER_DOMAIN}")
 

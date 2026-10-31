@@ -162,3 +162,33 @@ After the three passes, a startup-idea layer was added to every problem row: **4
 - Some ideas depend on a partner who may say no: a utility, insurer, defence programme, court or hospital.
 - The startup column is not a recommendation to incorporate. Some ideas are better run as a cooperative, a service line inside an existing institution, or an open-source project.
 - The first experiment is the real test. If the named experiment cannot be run, the idea should be rewritten before any build.
+
+---
+
+## Post-review addition — Duplicate-work audit
+
+The claim "no one is working on this" was too strong. A feature-level audit was added to every row as a `Work status` column. It records:
+
+- **Worked on:** named players or specific features already serving the need.
+- **Open:** the narrower feature that remains missing.
+- **Risk:** `DIRECT` / `CONTESTED` / `ADJACENT` / `LOW-ADJACENT` / `SPARSE`.
+- **Conf:** `H` / `M` / `L` based on public evidence.
+
+### What the audit found
+
+- The first audit found **23 HIGH**, **14 HIGH-MED**, **4 MED-HIGH**, **98 MED** and **5 LOW/LOW-MED** rows.
+- The fix pass **replaced 31 crowded problem statements with different problems** and **retitled/narrowed 12 more** to a specific wedge. Examples: transformer monitoring → underground cable fault pre-location; aflatoxin testing → smallholder hermetic storage compliance; agent least-privilege → clinic AI scribe consent; voice licensing → community radio archive licensing; desal brine → steam-trap monitoring; AI code licensing → AI voice-agent disclosure audit.
+- Final labels: **0 DIRECT**, **0 CONTESTED**, **135 ADJACENT**, **7 LOW-ADJACENT**, **2 SPARSE**. `ADJACENT` is not a duplicate: it means someone is working nearby, but the specific wedge is different. The original `MED` label was retired because it read as duplicate when it actually meant adjacent work.
+- Confidence: **37 H**, **104 M**, **3 L**. The low-confidence rows are explicitly marked; they are research leads, not conclusions.
+
+### What changed in the rows
+
+- Where the generic problem was crowded, it was **replaced with a different problem in the same domain**; where a narrow wedge remained, the row was retitled and its `Open`/`Wedge` field narrowed. Examples: transformer monitoring was replaced by underground cable fault pre-location; aflatoxin testing by hermetic storage compliance; agent least-privilege by clinic AI scribe consent; voice licensing by community radio archive licensing.
+- The `Crowd` column and the `Work status` column are intentionally different: `Crowd` is relative density; `Work status` names the exact feature and the remaining gap.
+- The summary and index now show the work status so a reader cannot shortlist a row without seeing the duplicate risk.
+
+### What is still uncertain
+
+- The audit is a public-source snapshot as of October 2026, not a census. Stealth startups, internal pilots and government programmes may not be visible.
+- A `LOW` risk label is the weakest claim in the repository. Verify with customer interviews, procurement searches, patent scans and a product teardown before building.
+- A `DIRECT` label would mean "do not build the generic version". The viable path is a different problem, buyer, geography, workflow or price point; `ADJACENT` is the normal state for an important problem.

@@ -102,7 +102,20 @@ Each problem row now carries 2–3 startup concepts. The test is deliberately st
 
 The `fit:` tag in each cell is shorthand for **team size / months / first experiment**. It is a planning claim, not a guarantee. Hardware certification, clinical governance, defence procurement and court acceptance can extend the path; those risks are named in the row's validation cell.
 
-## 8. Scoring and tiers
+## 8. Duplicate-work audit
+
+Every row now has a `Work status` cell with four parts:
+
+1. **Worked on:** named players or specific features already serving the need.
+2. **Open:** the narrower feature that is still missing.
+3. **Risk:** `DIRECT` (exact feature served by multiple credible players), `CONTESTED` (wedge still contested), `ADJACENT` (adjacent players exist, but the wedge is different), `LOW-ADJACENT` (few adjacent players), `SPARSE` (little visible work, verify).
+4. **Conf:** confidence in the public evidence (`H`, `M`, `L`).
+
+The audit is based on public products, research, procurement notices and 2026 reporting. It is deliberately conservative. Where the first audit found `DIRECT` or `CONTESTED` risk, the row was replaced or retitled, and a `Wedge:` field was added; the final risk label refers to the narrowed wedge, not the generic category. For example, AI scribes are crowded, but small-clinic consent plus retention audit is narrower; cable fault locators are crowded, but sub-₹1L clamp-on analytics for LV crews is narrower.
+
+No row is certified greenfield. Before building, run the named product scan, talk to the buyer, and check the specific workflow in the row's `Open` field. The risk label is a decision aid, not a legal or investment opinion.
+
+## 9. Scoring and tiers
 
 The summary uses three tiers:
 
@@ -112,7 +125,7 @@ The summary uses three tiers:
 
 Tiers are not moral rankings. A Tier C problem can change a system; it is simply less likely to succeed as a 1–3 person, 12-month project.
 
-## 9. What the repository deliberately is not
+## 10. What the repository deliberately is not
 
 - It is not a startup idea list. Some problems are best run by a cooperative, municipality, hospital, or standards body.
 - It is not a claim that technology is the answer. Many rows are runbooks, contracts, curricula, inspection protocols, and financing structures.

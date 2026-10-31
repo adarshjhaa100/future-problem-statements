@@ -11,7 +11,7 @@ The previous 166-problem edition is preserved in [`archive/2025-v1/`](./archive/
 ## What is different in this edition
 
 - **12 domains, 144 problems.** Four new domains and a sharper split between planetary health, energy/materials, care, AI trust, education/work, finance, cities, industry/defence, governance and creative rights.
-- **Every row now carries:** impact as *who × how long*, relative crowd density with named players, pilot budget, team composition, time to implementation, a detailed solution, a first-version test, an Aristotelian first-principles chain, validation with a kill criterion, a specific behavioural GTM plan, and **2–3 startup ideas with a feasibility tag**.
+- **Every row now carries:** impact as *who × how long*, relative crowd density with named players, pilot budget, team composition, time to implementation, a detailed solution, a first-version test, an Aristotelian first-principles chain, validation with a kill criterion, a specific behavioural GTM plan, **2–3 startup ideas with a feasibility tag**, and a **work-status audit** of what is already being built versus the exact open gap.
 - **No "3-month demo" theatre.** The first version is a pilot, prototype, runbook or protocol that a sceptical outsider can test. The implementation horizon is stated as 4–11 months.
 - **A named payer in every row.** If the only answer is "government should", the row is not ready.
 - **A shared research base and a behavioural playbook.** The evidence spine is in [`docs/research-base-2026.md`](./docs/research-base-2026.md); the GTM method is in [`docs/behavioral-playbook.md`](./docs/behavioral-playbook.md).
@@ -40,7 +40,7 @@ Supporting documents:
 
 | File | Purpose |
 |---|---|
-| [`summary-all.md`](./summary-all.md) | Compact 144-row view with impact, crowd, budget, team/time and startup ideas |
+| [`summary-all.md`](./summary-all.md) | Compact 144-row view with impact, crowd, budget, team/time, startup ideas and duplicate-work risk |
 | [`docs/research-base-2026.md`](./docs/research-base-2026.md) | Shared evidence spine and sources |
 | [`docs/methodology.md`](./docs/methodology.md) | Aristotle, axioms, six filters, scoring and review questions |
 | [`docs/behavioral-playbook.md`](./docs/behavioral-playbook.md) | The GTM vocabulary used in every marketing column |
@@ -53,35 +53,35 @@ Supporting documents:
 ## The 12 domains at a glance
 
 ### 1. Planetary Health & Climate Adaptation
-Heat-safe rentals, tree survival warranties, flood mould prevention, smoke refuges, biodiversity net-gain for small builders, roadkill corridors, saltwater intrusion, nurdle capture, cooling-centre activation, disaster debris reuse, heat insurance and night heat mapping.
+Heat-safe rentals, tree survival warranties, flood mould prevention, smoke refuges, urban soil-lead screening, roadkill corridors, saltwater intrusion, nurdle capture, cooling-centre activation, disaster debris reuse, road-salt contamination and night heat mapping.
 **Why now:** extreme weather is the top long-term risk in the WEF 2026 report; prevention is underfunded relative to response.
 
 ### 2. Energy, Grid & Critical Materials
-Distribution transformer canaries, rooftop solar grid-support retrofits, data-centre compute curtailment, waste heat to cold storage, motor rewinding efficiency, phase balancing, critical-mineral recovery from smelter dust, magnet recycling, transformer oil lab-on-chip, community solar for renters, LPG auto-shutoff and city-gas methane detection.
+Underground cable fault pre-location, solar-panel end-of-life recovery, data-centre compute curtailment, waste heat to cold storage, motor rewinding efficiency, municipal water-pump flexibility, critical-mineral recovery from smelter dust, steam-trap monitoring, transformer oil lab-on-chip, prepaid-meter bill shock, LPG auto-shutoff and city-gas methane detection.
 **Why now:** renewables are 33.8% of global electricity, but grids, flexibility and materials are the bottleneck; export controls have made critical-mineral concentration an immediate security problem.
 
 ### 3. Food, Water & Land Systems
-Aflatoxin testing at collection, post-harvest loss proof for insurance, rural leak detection, wastewater reuse safety, aquifer recharge verification, aquaculture eDNA, dairy mastitis tests, equipment sharing trust, land boundary mediation, fishers' cold chain, cattle heat stress and event food-waste logistics.
+Smallholder hermetic storage compliance, post-harvest loss proof for insurance, rural leak detection, wastewater reuse safety, aquifer recharge verification, aquaculture eDNA, dairy lameness monitoring, equipment sharing trust, land boundary mediation, fishers' cold chain, cattle heat stress and event food-waste logistics.
 **Why now:** 2.1 billion people face moderate/severe food insecurity; 13.2% of food is lost after harvest; soil degradation is worsening.
 
 ### 4. Health, Biosecurity & Longevity
-Antibiotic stewardship audits, wound-infection photo surveillance, snakebite species ID and antivenom cold chain, maternal blood-loss measurement, SDF caries prevention, diabetic foot negative-pressure kits, PHC stockout prediction, hepatitis B birth-dose kits, long-COVID rehab, menopause navigation, hand-hygiene nudges and blood-culture contamination reduction.
+Dairy-farm antibiotic residue monitoring, wound-infection photo surveillance, snakebite species ID and antivenom cold chain, maternal blood-loss measurement, SDF caries prevention, diabetic foot negative-pressure kits, PHC stockout prediction, hepatitis B birth-dose kits, long-COVID rehab, postpartum pelvic-floor rehab, hand-hygiene nudges and blood-culture contamination reduction.
 **Why now:** AMR is associated with 4.7 million deaths a year; ordinary clinical seams still kill and disable millions.
 
 ### 5. AI Safety, Digital Trust & Information Integrity
-SMB agent least-privilege audits, prompt-injection firewalls, family voice-scam codes, local-news provenance, AI incident data for insurance, agent payment mandates, AI vendor registries, fine-tune poisoning detection, teen companion audits, digital legacy executors, elder-safe UPI confirmation and court evidence authenticity.
+Clinic AI-scribe consent audits, school AI data-protection audits, AI-code license provenance, elder trusted-contact registries, AI incident data for insurance, AI model-retirement assurance, synthetic-media evidence intake, fine-tune poisoning detection, teen companion audits, digital legacy executors, elder-safe UPI confirmation and court evidence authenticity.
 **Why now:** agents are in production faster than governance; deepfake fraud is measured in billions; small organisations and households are unprotected.
 
 ### 6. Care Economy, Mental Health & Human Development
-Dementia caregiver micro-respite, medication reconciliation, social prescribing, school self-harm escalation, men's mental health, wheelchair repair, home-care micro-credentials, suicide/overdose grief support, childcare micro-audits, foster-care transition, caregiver financial navigation and task-shifting supervision.
+Dementia caregiver micro-respite, dementia home-safety modification, social prescribing, school self-harm escalation, men's mental health, wheelchair repair, home-care micro-credentials, suicide/overdose grief support, childcare micro-audits, foster-care transition, caregiver financial navigation and task-shifting supervision.
 **Why now:** more than 1 billion people live with a mental health condition; only 9% of people with major depression receive minimally adequate treatment; care work is invisible and unpaid.
 
 ### 7. Education, Skills & Future of Work
-Informal-trade apprenticeships, gig-worker credentials, school repair prioritisation, returnships, vocational English, proof-of-human-skill portfolios, teacher retention early warning, MSME digital apprenticeships, prior-learning recognition, school transport safety, learning-disability screening and first-gen alumni sponsorship.
+Rural teacher housing, gig-worker credentials, school repair prioritisation, voice-first adult literacy, right-to-repair certification, proof-of-human-skill portfolios, teacher retention early warning, MSME digital apprenticeships, prior-learning recognition, school transport safety, learning-disability screening and first-gen alumni sponsorship.
 **Why now:** 273 million children and youth are out of school; AI is eroding the entry-level tasks that used to build capability.
 
 ### 8. Financial Inclusion & the Real Economy
-Rent-to-own equipment, trade-credit insurance, savings commitment devices, debt-trap consolidation, delayed-payment enforcement, cooperative procurement, movable collateral registries, credit repair, funeral insurance, livestock insurance, warehouse receipts and nano invoice discounting.
+Productive-asset rent-to-own, trade-credit insurance, savings commitment devices, debt-trap consolidation, delayed-payment enforcement, rent-payment credit reporting, movable collateral registries, credit repair, funeral insurance, livestock insurance, warehouse receipts and micro-franchise financing.
 **Why now:** 63 million Indian MSMEs, only ~14% with formal credit; the credit gap is US$300–360 billion; informal workers need products shaped to daily cash flow.
 
 ### 9. Cities, Mobility & Housing
@@ -89,15 +89,15 @@ Vacant housing activation, street-vending allocation, bus-stop shade audits, bla
 **Why now:** 1.18 million road deaths a year; heat and housing risks are concentrated at specific streets and junctions.
 
 ### 10. Industry, Semiconductors, Space & Defence
-Drone component authenticity, ammunition lifecycle monitoring, defence procurement compliance, additive-manufacturing powder reuse, robot safety retrofits, semiconductor test fixtures, chip thermal interfaces, space-weather alerts, rad-hard RISC-V, counterfeit component detection, soldier heat/hydration wearables and tactical power management.
+Drone component authenticity, ammunition lifecycle monitoring, defence procurement compliance, additive-manufacturing powder reuse, robot safety retrofits, fab spare-parts refurbishment, chip thermal interfaces, space-weather alerts, rad-hard RISC-V, wire-harness error-proofing, soldier heat/hydration wearables and tactical power management.
 **Why now:** critical-mineral chokepoints, a US$14.4B counter-drone market and capital-intensive supply chains reward reliability and trust layers, not another platform.
 
 ### 11. Governance, Justice & Civic Infrastructure
-Local news micro-donations, municipal meeting transparency, prison family connection, restorative justice, legal aid matching, court interpreter scheduling, municipal contract change-order tracking, FOI assistance, police complaint tracking, missing persons case management, disaster relief navigation and court evidence organisers.
+Local news micro-donations, public land activation, prison family connection, restorative justice, legal aid triage, utility shutoff prevention, municipal contract change-order tracking, FOI assistance, police complaint tracking, missing persons case management, disaster relief navigation and court evidence organisers.
 **Why now:** local news and institutional trust are declining; rights without a usable process are not rights in practice.
 
 ### 12. Creative, Cultural & Attention Economy
-Consent-based voice licensing, esports integrity, Indian sound libraries, craft provenance, film archive restoration, fan-translation rights, creator contract transparency, comedy joke attribution, cultural misappropriation checks, live-venue acoustics, heritage digitisation and Blender tools for Indian animation.
+Community radio archive licensing, sign-language performance capture, Indian sound libraries, craft provenance, film archive restoration, fan-translation rights, creator contract transparency, comedy joke attribution, cultural misappropriation checks, live-venue acoustics, heritage digitisation and Blender tools for Indian animation.
 **Why now:** generative AI makes output cheap; consent, provenance, taste and cultural context are the scarce assets.
 
 ---
@@ -109,21 +109,48 @@ If you want a shortlist rather than a catalogue, start with these. They combine 
 | Domain | # | Problem | Why it is a first pick | First payer to test |
 |---|---|---|---|---|
 | Planetary | 1 | Heat-Safe Rental Housing Score + Passive Cooling Kit | Split incentive is the blocker; one summer produces proof | Landlord association or insurer |
-| Energy | 1 | Distribution Transformer Canary | The distribution grid is the least instrumented asset | Utility asset-management budget |
-| Food & Water | 1 | Aflatoxin Rapid Test at Collection | Testing at the buyer changes the whole chain | Milk union or maize aggregator |
-| Health | 1 | Antibiotic Stewardship Peer-Comparison Audit | Low-cost, data-only, measurable prescribing change | Clinic association or insurer |
-| AI & Trust | 1 | SMB Agent Least-Privilege Auditor | Timely, cheap, and the blast radius is obvious | Managed service provider or cyber insurer |
-| Care | 1 | Dementia Caregiver Micro-Respite | The binding constraint is a break, not information | Employer benefit or dementia association |
-| Education & Work | 1 | Informal-Trade Apprenticeship Matching | Real skill transmission already exists; matching is missing | Trade association or employer |
-| Finance | 1 | Rent-to-Own Equipment Financing | The asset is the collateral and the income source | Equipment dealer or lender |
-| Cities | 4 | Road-Crash Black-Spot Rapid Retrofit | Crashes cluster; a small fix saves lives this year | Municipal road-safety budget |
-| Industry & Defence | 10 | Counterfeit Electronic Component Detection | Supply-chain trust is a growing security gap | Distributor or defence supplier |
+| Energy | 1 | Underground Cable Fault Pre-Location | Crews dig blindly; a one-dig fix saves outage hours | Utility cable-maintenance budget |
+| Food & Water | 1 | Smallholder Hermetic Storage + Moisture Compliance | Storage loss is measurable and buyer-linked | FPO or maize buyer |
+| Health | 1 | Dairy-Farm Antibiotic Residue Monitoring + Vet Stewardship | One treated cow can reject a tanker; buyer can enforce | Milk union or dairy buyer |
+| AI & Trust | 1 | Clinic AI Scribe Consent + Data-Retention Audit | Adoption is outrunning small-clinic privacy capacity | Clinic association or malpractice insurer |
+| Care | 1 | 2–4 Hour Vetted Dementia Micro-Respite with Employer Benefit | The binding constraint is a break, not information | Employer benefit or dementia association |
+| Education & Work | 1 | Rural Teacher Housing Matching + Retention | Housing is a direct, testable retention lever | School district or teacher union |
+| Finance | 1 | Productive-Asset Rent-to-Own with Telemetry | The asset is the collateral and the income source | Equipment dealer or lender |
+| Cities | 4 | LMIC Rapid Retrofit Kit + Before/After Crash Audit | Crashes cluster; a small fix saves lives this year | Municipal road-safety budget |
+| Industry & Defence | 10 | Wire Harness Assembly Error-Proofing for MSMEs | One crossed wire can fail a vehicle; low-cost inspection is missing | Auto OEM or harness supplier |
 | Governance | 7 | Municipal Contract Change-Order Leak Detector | Public money leaks through change orders; data is public | Local press or council oversight committee |
-| Creative | 1 | Consent-Based Voice Licensing | AI demand is high; consent infrastructure is missing | Voice-actor union or AI lab |
+| Creative | 1 | Community Radio Archive + Licensing Marketplace | Local audio heritage is degrading; rights-cleared licensing is missing | Community radio network or cultural funder |
 
 These are not the only good rows. They are the ones with the shortest path from a credible first version to a payer conversation.
 
 ---
+
+## Duplicate-work audit — what is already being built
+
+The `Work status` column exists because "nobody is working on this" is almost always false. Each cell has four parts:
+
+- **Worked on:** the players or features already serving the need.
+- **Open:** the specific feature that is still missing or poorly served.
+- **Risk:** `DIRECT` means the exact feature is served by multiple credible players; `CONTESTED` means the wedge is still contested; `ADJACENT` means adjacent players exist but the wedge is different; `LOW-ADJACENT` means few adjacent players; `SPARSE` means little visible work and must be verified.
+- **Conf:** confidence in the public evidence (`H`, `M`, `L`).
+
+In the fix pass, **31 crowded problem statements were replaced with different problems** and **12 more were retitled and narrowed** to a specific wedge. The 43 affected rows now carry a **`Wedge:`** field. For the remaining rows, the `Open` field is the wedge. The final risk label refers to the narrowed problem, not the generic category.
+
+This is **not a guarantee of uniqueness**. It is a first-pass, feature-level duplicate check based on public products, research, procurement notices and 2026 reporting. `ADJACENT` is the normal state for an important problem: someone is working nearby, but the specific wedge is different. `DIRECT` would mean stop and pick another problem; `CONTESTED` would mean narrow further. Pick a narrower wedge, a different buyer, a different geography, or a different workflow.
+
+The pattern across the 144 rows is clear: the generic layer is often crowded, while the **last-mile integration, maintenance, trust and payer workflow** remains thin. Examples:
+
+- Cable fault locators are crowded (Megger, HV Diagnostics); sub-₹1L clamp-on analytics for LV cable crews is the narrower gap.
+- Hermetic storage bags are mature (PICS, GrainPro); bundled moisture compliance plus buyer premium is the gap.
+- AI scribes are crowded (Abridge, Nuance DAX, Suki); small-clinic consent plus retention audit is the gap.
+- Rural teacher housing is a known retention lever; verified matching plus rent guarantee is thin.
+- Wire-harness vision/test hardware is crowded (Cognex, Keyence); sub-₹2L MSME error-proofing is thin.
+- Community radio archives exist; a rights-cleared licensing marketplace is thin.
+- Dementia respite exists (Alzheimer's Association grants, CMS GUIDE, Care.com, Papa); 2–4 hour vetted micro-blocks with employer benefits and LMIC safeguarding remain thin.
+- Steam-trap surveys are manual (Spirax Sarco, Armstrong); sub-₹20K continuous monitoring for MSMEs is the narrower gap.
+- Voice-AI platforms are crowded (Retell, Vapi, ElevenLabs); AI-disclosure/consent audit for call centres is thinner.
+
+If you are about to build a row, read `Work status` first, then run the named verification search or product scan. The column is designed to save you from duplicate work, not to replace diligence.
 
 ## Startup idea layer
 
@@ -194,6 +221,14 @@ Read [`docs/behavioral-playbook.md`](./docs/behavioral-playbook.md) for the full
 | Rows with a kill criterion | **144** |
 | Rows with a behavioural GTM plan | **144** |
 | Rows with 2–3 startup ideas | **144** |
+| Rows with a duplicate-work audit | **144** |
+| DIRECT duplicate-risk rows | **0** |
+| CONTESTED duplicate-risk rows | **0** |
+| ADJACENT duplicate-risk rows | **135** |
+| LOW-ADJACENT duplicate-risk rows | **7** |
+| SPARSE rows | **2** |
+| Rows replaced in the fix pass | **31** |
+| Rows retitled/narrowed in the fix pass | **12** |
 | Startup ideas scoped to 1–3 people and under 12 months | **100%** |
 | Crowd labels | Relative density estimates (SATURATED/CROWDED/THIN/NEAR-ZERO), not a census |
 | Previous edition archived | **166 problems, 9 domains** |
@@ -240,7 +275,7 @@ Read [`docs/behavioral-playbook.md`](./docs/behavioral-playbook.md) for the full
 
 The repository is markdown-first. To add or replace a problem:
 
-1. Add a row to the relevant domain table using the same columns, including 2–3 startup ideas with a `fit:` tag (team size, months, first experiment).
+1. Add a row to the relevant domain table using the same columns, including 2–3 startup ideas with a `fit:` tag and a `Work status` cell with named players, the open gap, risk and confidence.
 2. Keep the impact, crowd, budget, team/time, first version, validation and marketing cells concrete.
 3. Add the source or evidence link to the domain research summary or the shared research base.
 4. Run the table validator (`python3 scripts/validate.py`).

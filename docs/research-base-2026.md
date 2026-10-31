@@ -94,3 +94,37 @@ These are the primary or near-primary links used for the numbers above. Where a 
 - WHO, road traffic death rate estimates: https://www.who.int/data/gho/data/indicators/indicator-details/GHO/estimated-road-traffic-death-rate-(per-100-000-population)
 - Micro- and nanoplastics human evidence review (2026): https://pubmed.ncbi.nlm.nih.gov/41761215
 - World Bank, India MSME finance feature (October 2026): https://www.worldbank.org/en/news/feature/2026/10/11/from-credit-gaps-to-growth-how-india-s-small-and-medium-firms-benefit-from-private-investment
+
+## Duplicate-work audit — 2026 signals used
+
+The `Work status` column was checked against public products, procurement and 2026 reporting. Rows that remained crowded after narrowing were replaced with different problems. The signals below explain both the audit and the replacements:
+
+- **Low-voltage grid monitoring is crowded:** Siemens Electrification X, Schneider LV grid management, Franklin Grid DTM, Edge Zero, Corinex Grid Intelligence Node, VisNet, Easymetering, Zenner. The narrower gap is sub-₹10K acoustic/vibration retrofit with failure prediction.
+- **Agent security is crowded:** Microsoft Entra Agent ID and Curity least-privilege templates, Lakera, Prompt Security, Protect AI, HiddenLayer, Benchspan, mTrust, AgentAI Shield, Vanta, Drata, Astrix, Oasis. The narrower gap is SMB-priced agent-scope audit and local tooling.
+- **Prompt injection is operational, not theoretical:** OWASP GenAI Q1 2026 exploit round-up, Cloud Security Alliance April 2026 research note, Google Security Blog April 2026. This raises duplicate risk for generic firewalls.
+- **Dementia respite is funded and served:** Alzheimer's Association 2026 CDRI respite grants, CMS GUIDE respite codes (4-hour in-home unit), Care.com, Papa, Home Instead, Dementiathome. The narrower gap is 2–4 hour vetted micro-blocks with employer benefit and LMIC safeguarding.
+- **TReDS is crowded and was reformed in 2026:** RBI TReDS Directions 2026, ₹8.29 lakh crore financed, 1.98 lakh MSMEs onboarded, CGTMSE guarantee support, GeM integration, securitisation. The narrower gap is sub-₹1 crore nano-MSME invoice discounting with fast auction.
+- **Teacher apprenticeships and RPL are policy priorities:** NITI Aayog 2026 skilling report, Apprenticeship India, NAPS, Skill India Digital, APAAR, state teacher-apprenticeship programmes. The narrower gap is informal master-apprentice matching and portable gig credentials.
+- **Black-spot and school-zone programmes exist:** Australia Black Spot Program 2026, iRAP, Vision Zero, Safe Routes to School. The narrower gap is rapid low-cost retrofit and before/after evaluation in LMICs.
+- **Counterfeit component testing is mature:** ACT Lab, Global ETS, SMT Corp, AS6171/AS6081, X-ray/XRF, pin-print testing. The narrower gap is low-cost multi-modal screening for SME distributors.
+- **Voice licensing is crowded:** Voices.com AI voice, ElevenLabs marketplace, Respeecher, Aiconic Voices, Story Protocol, iQIYI likeness deals. The narrower gap is consent-scoped Indian-language corpora with revocation and royalty tracking.
+- **Aflatoxin rapid tests are commodity:** Neogen, Romer Labs, Charm, EnviroLogix, RTDx, Nankai Biotech. The narrower gap is collection-centre integration with buyer response.
+- **Municipal transparency tools are mature:** Granicus, Legistar, OpenCouncil, city clerk systems. The narrower gap is low-cost capture, plain-language summary and searchable votes in low-resource cities.
+
+These links are a starting point for diligence, not a complete market map. A `DIRECT` risk label would mean the generic feature is served and the row should be replaced; `ADJACENT` means someone is working nearby but the specific workflow, geography, price point or payer is different.
+
+### Selected duplicate-audit links
+
+- RBI TReDS Directions 2026: https://www.rbi.org.in/scripts/BS_ViewMasDirections.aspx?id=13526
+- Siemens distribution grid monitoring: https://www.siemens.com/en-us/products/electrification-x/distribution-grid-monitoring/
+- Corinex Grid Intelligence Node: https://www.prnewswire.com/news-releases/corinex-launches-grid-intelligence-node-to-reveal-the-true-state-of-the-low-voltage-grid-302857767.html
+- Edge Zero: https://edgezero.co/
+- Microsoft least privilege for AI agents: https://learn.microsoft.com/en-us/security/zero-trust/sfi/least-privilege-for-ai-agents
+- OWASP prompt injection in production: https://www.helpnetsecurity.com/2026/06/11/owasp-prompt-injection-ai-security-failures
+- Alzheimer's Association 2026 respite grants: https://www.alz.org/getmedia/ad89fa70-8b2c-43e8-822d-4e805d080ed3/2026-cdri-grant-awardees.pdf
+- CMS GUIDE respite fact sheet: https://www.cms.gov/files/document/mln7172818-guiding-improved-dementia-experience-model.pdf
+- NITI Aayog 2026 skilling report: https://www.niti.gov.in/sites/default/files/2026-08/Reimagining-Skilling-for-Viksit-Bharat-2047.pdf
+- ACT Lab counterfeit detection: https://actestlab.com/services-2/electrical-testing
+- Global ETS counterfeit detection: https://www.gets-usa.com/
+- Voices.com AI voice licensing: https://voices.com/solutions/ai-voice
+- Pro Sound Effects / Professional Sound Alliance: https://blog.prosoundeffects.com/pro-sound-effects-joins-professional-sound-alliance

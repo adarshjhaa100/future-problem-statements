@@ -44,9 +44,9 @@ def short(s: str, n: int) -> str:
 def main() -> None:
     out = [
         "# Summary — 144 Problems Across 12 Domains (October 2026)\n",
-        "A compact scan of every problem. Full rows live in the domain files. Impact is stated as reach × duration; crowd is relative team density; budgets are first-version pilots, not scale. Startup ideas include a fit tag: team size, months, and the first experiment.\n",
-        "| Domain | # | Problem | Type | Impact | Crowd | Budget | Team & time | Startup ideas |",
-        "|---|---|---|---|---|---|---|---|---|",
+        "A compact scan of every problem. Full rows live in the domain files. Impact is stated as reach × duration; crowd is relative team density; budgets are first-version pilots, not scale. Startup ideas include a fit tag: team size, months, and the first experiment. Work status names what is already being built, the open gap, duplicate risk and confidence.\n",
+        "| Domain | # | Problem | Type | Impact | Crowd | Budget | Team & time | Startup ideas | Work status |",
+        "|---|---|---|---|---|---|---|---|---|---|",
     ]
     for filename, label in FILES:
         for line in (ROOT / filename).read_text().splitlines():
@@ -57,7 +57,7 @@ def main() -> None:
                 out.append(
                     f"| {label} | {clean(c[0])} | {clean(c[1])} | {clean(c[2])} | "
                     f"{short(c[5], 120)} | {short(c[4], 85)} | {clean(c[6])} | {clean(c[7])} | "
-                    f"{clean(c[13])} |"
+                    f"{clean(c[13])} | {clean(c[14])} |"
                 )
     out += [
         "\n## How to read the columns\n",
@@ -65,7 +65,8 @@ def main() -> None:
         "- **Crowd** — SATURATED, CROWDED, THIN or NEAR-ZERO, with named players or the specific gap.\n"
         "- **Budget** — the cost of the first version, in ₹ and US$ at roughly ₹85/US$1.\n"
         "- **Team & time** — the minimum viable team and the path to a repeatable deployment, not a demo.\n"
-        "- **Startup ideas** — 3 concepts with a fit tag: team size, months, and the first experiment. All are scoped to 1–3 people and under one year.\n",
+        "- **Startup ideas** — 3 concepts with a fit tag: team size, months, and the first experiment. All are scoped to 1–3 people and under one year.\n"
+        "- **Work status** — what is already being worked on, the specific open gap, duplicate-risk label (DIRECT/CONTESTED/ADJACENT/LOW-ADJACENT/SPARSE) and confidence (H/M/L).\n",
         "\n## Portfolio shape\n",
         "| Layer | Domains | What they change |",
         "|---|---|---|",
